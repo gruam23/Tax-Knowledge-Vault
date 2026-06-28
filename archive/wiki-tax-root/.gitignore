@@ -1,0 +1,13 @@
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+.smart-connections/
+.trash/
+.DS_Store
+node_modules/
+.wiki-tmp/
+
+
+
+
+# Ignore Smart Environment folder
+.smart-env

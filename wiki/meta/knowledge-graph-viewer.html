@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>Wiki-Tax 知识图谱</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: #1e1e2e;
+    color: #cdd6f4;
+    font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    padding: 32px 16px;
+  }
+  h1 {
+    font-size: 1.6rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+    background: linear-gradient(135deg, #89b4fa, #cba6f7);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .subtitle {
+    font-size: 0.85rem;
+    color: #6c7086;
+    margin-bottom: 28px;
+  }
+  .legend {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 24px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.8rem;
+    color: #a6adc8;
+  }
+  .legend-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 3px;
+  }
+  .graph-container {
+    background: #181825;
+    border: 1px solid #313244;
+    border-radius: 12px;
+    padding: 32px;
+    max-width: 1100px;
+    width: 100%;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+  }
+  .mermaid {
+    display: flex;
+    justify-content: center;
+  }
+  /* Override Mermaid default styles for dark theme */
+  .mermaid .node rect,
+  .mermaid .node polygon,
+  .mermaid .node circle {
+    stroke-width: 2px;
+  }
+  .stats {
+    margin-top: 24px;
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .stat-card {
+    background: #181825;
+    border: 1px solid #313244;
+    border-radius: 8px;
+    padding: 14px 22px;
+    text-align: center;
+    min-width: 100px;
+  }
+  .stat-num {
+    font-size: 1.8rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, #89b4fa, #a6e3a1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .stat-label {
+    font-size: 0.75rem;
+    color: #6c7086;
+    margin-top: 4px;
+  }
+</style>
+</head>
+<body>
+
+<h1>📊 Wiki-Tax 知识图谱</h1>
+<p class="subtitle">OECD Transfer Pricing Guidelines 2022 · 概念关联全景</p>
+
+<div class="legend">
+  <div class="legend-item"><div class="legend-dot" style="background:#4fc1ff"></div>核心原则</div>
+  <div class="legend-item"><div class="legend-dot" style="background:#dcdcaa"></div>方法论</div>
+  <div class="legend-item"><div class="legend-dot" style="background:#ce9178"></div>交易类型</div>
+  <div class="legend-item"><div class="legend-dot" style="background:#6a9955"></div>合规与争端</div>
+  <div class="legend-item"><div class="legend-dot" style="background:#c586c0"></div>实体</div>
+  <div class="legend-item"><div class="legend-dot" style="background:#585b70"></div>虚线 = 互斥/对比</div>
+</div>
+
+<div class="graph-container">
+  <pre class="mermaid">
+graph LR
+    OECD["🏛 OECD<br/>规则制定者"]
+    ALP["⚖️ 独立交易原则<br/>Arm's Length"]
+    GFA["🚫 全球公式分配法<br/>Formulary Apportionment"]
+    TPM["🔧 转移定价方法<br/>5 种标准方法"]
+    CA["🔍 可比性分析<br/>9 步流程"]
+    DEMPE["💎 无形资产 & DEMPE<br/>开发·提升·维护·保护·利用"]
+    IGS["🤝 集团内服务<br/>5% 低附加值加成"]
+    CCA["📋 成本分摊协议<br/>CCA"]
+    BR["🔄 业务重组<br/>Exit Charge"]
+    FT["💰 金融交易<br/>资本弱化·资金池"]
+    SYN["🔗 协同效应<br/>MNE Group Synergies"]
+    DOC["📁 同期资料<br/>三层文档架构"]
+    MAP["🤝 MAP<br/>相互协商程序"]
+
+    OECD --> ALP
+    OECD --> DOC
+    OECD --> MAP
+
+    ALP -. "明确反对" .-> GFA
+
+    ALP --> TPM
+    ALP --> CA
+    TPM --> CA
+
+    ALP --> DEMPE
+    ALP --> IGS
+    ALP --> CCA
+    ALP --> BR
+    ALP --> FT
+
+    DEMPE --> CCA
+    DEMPE --> BR
+    CA --> IGS
+    SYN --> CA
+    SYN -. "≠ 无形资产" .-> DEMPE
+
+    ALP --> DOC
+    ALP --> MAP
+    BR --> MAP
+    FT --> MAP
+
+    classDef principle fill:#4fc1ff,stroke:#45a5e0,color:#000,font-weight:bold
+    classDef method fill:#dcdcaa,stroke:#c4c48e,color:#000,font-weight:bold
+    classDef transaction fill:#ce9178,stroke:#b57a63,color:#000,font-weight:bold
+    classDef compliance fill:#6a9955,stroke:#558044,color:#fff,font-weight:bold
+    classDef entity fill:#c586c0,stroke:#a96fa4,color:#000,font-weight:bold
+
+    class ALP,GFA principle
+    class TPM,CA method
+    class DEMPE,IGS,CCA,BR,FT,SYN transaction
+    class DOC,MAP compliance
+    class OECD entity
+  </pre>
+</div>
+
+<div class="stats">
+  <div class="stat-card"><div class="stat-num">12</div><div class="stat-label">概念页</div></div>
+  <div class="stat-card"><div class="stat-num">1</div><div class="stat-label">实体页</div></div>
+  <div class="stat-card"><div class="stat-num">1</div><div class="stat-label">素材摘要</div></div>
+  <div class="stat-card"><div class="stat-num">658</div><div class="stat-label">已消化页数</div></div>
+  <div class="stat-card"><div class="stat-num">10</div><div class="stat-label">覆盖章节</div></div>
+</div>
+
+<script type="module">
+  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+  mermaid.initialize({
+    startOnLoad: true,
+    theme: 'dark',
+    themeVariables: {
+      primaryColor: '#4fc1ff',
+      primaryTextColor: '#cdd6f4',
+      primaryBorderColor: '#45a5e0',
+      lineColor: '#585b70',
+      secondaryColor: '#313244',
+      tertiaryColor: '#181825',
+      fontFamily: 'Segoe UI, Microsoft YaHei, sans-serif',
+      fontSize: '13px'
+    },
+    flowchart: {
+      curve: 'basis',
+      padding: 16,
+      nodeSpacing: 50,
+      rankSpacing: 60
+    }
+  });
+</script>
+
+</body>
+</html>

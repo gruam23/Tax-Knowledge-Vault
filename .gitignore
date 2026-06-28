@@ -1,0 +1,11 @@
+.obsidian/workspace*
+.obsidian/cache
+.obsidian/plugins/
+.smart-env/
+.claude/
+.claudian/
+Excalidraw/
+raw/assets/pdfs/**/*.pdf
+.trash/
+.DS_Store
+Thumbs.db
