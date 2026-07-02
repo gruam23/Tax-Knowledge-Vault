@@ -32,6 +32,15 @@ It is useful for explaining why physical presence is no longer the only practica
 
 Use this case when discussing cross-border e-commerce, marketplace rules, and state-level indirect tax exposure.
 
+## 待补 Source 队列
+
+| 优先级 | 待补来源 | 用途 | 当前状态 |
+| --- | --- | --- | --- |
+| P0 | South Dakota v. Wayfair, Inc. 美国最高法院判决原文 | 裁判结论、推翻 physical presence 的理由 | 未入库 |
+| P0 | South Dakota economic nexus statute / Department of Revenue guidance | 经济联结门槛和州级规则 | 未入库 |
+| P1 | Quill Corp. v. North Dakota 判决原文 | Wayfair 前规则背景 | 未入库 |
+| P1 | Marketplace facilitator rules 官方资料 | 平台代扣代缴扩展 | 未入库 |
+
 ## 来源
 
 - Phase 1 seed note. Add Supreme Court opinion and state guidance sources in Phase 2.

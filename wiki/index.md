@@ -25,11 +25,11 @@ updated: 2026-06-28
 - [[hot|热缓存]] — 当前维护重点
 - [[overview|覆盖总览]] — 当前知识覆盖面
 - [[meta/maintenance/MAINTENANCE|维护手册]] — 每日/每周/每月工作流
-- [[meta/lint-reports/lint-report-2026-06-28|最新 Lint 报告]] — 结构质量检查
+- [[log|Wiki 日志]] — wiki 层维护记录
+- [[meta/lint-reports/lint-report-2026-07-02|最新 Lint 报告]] — 结构质量检查
 
 ## MOC 导航
 
-- [[00-meta/index]] — 元信息、维护和迁移记录
 - [[01-china-tax/index]] — 中国税法
 - [[02-international-tax/index]] — 国际税基础框架、BEPS、常设机构、受益所有人
 - [[03-transfer-pricing/index]] — OECD TPG、独立交易原则、可比性、DEMPE、金融交易
@@ -61,6 +61,15 @@ updated: 2026-06-28
 - [[../indexes/dataview/全部案例索引]] — 所有 `type: case` 页面
 - [[../indexes/dataview/全部政策索引]] — 所有 `type: policy` 页面
 - [[../indexes/dataview/全部source索引]] — 所有 `type: source` 页面
+
+## 维护面板
+
+- [[../indexes/dataview/Needs Review 页面]] — 待复核页面
+- [[../indexes/dataview/Developing 页面]] — 正在发展中的页面
+- [[../indexes/dataview/Mature 知识资产]] — 成熟知识资产
+- [[../indexes/dataview/待补来源页面]] — 来源缺口队列
+- [[../indexes/dataview/适合转成输出的页面]] — 可转为输出的知识卡
+- [[../indexes/dataview/最近30天更新]] — 近期更新
 
 ## 实体 (Entities)
 

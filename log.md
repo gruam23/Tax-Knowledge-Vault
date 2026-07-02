@@ -2,6 +2,13 @@
 
 ## 2026-07-02
 
+- 统一 meta 入口策略：保留 `wiki/hot.md`、`wiki/overview.md`、`wiki/log.md`、`wiki/meta/maintenance/`、`wiki/meta/lint-reports/` 为主入口，`wiki/00-meta/index.md` 改为兼容页。
+- 加厚 `wiki/02-international-tax/index.md`、`wiki/03-transfer-pricing/index.md`、`wiki/06-eu-vat-gst/index.md`，补领域定位、学习路径、核心知识卡、关键 source、输出入口、待补队列和成熟度说明。
+- 升级 `wiki/sources/index.md` 与 `templates/source-template.md`，将 source 体系改为按机构和资料类型组织。
+- 为受益所有人、常设机构、Wayfair、DEMPE、独立交易原则补“待补 Source 队列”，未补权威来源的页面仍保持 `needs-review` 或 `developing`。
+- 加厚 `outputs/interview/` 5 个面试页面，补 30 秒、1 分钟、3 分钟、专业展开框架、英文表达、追问、风险和 Sources。
+- 新增 6 个 Dataview 维护面板：Needs Review、Developing、Mature、待补来源、适合转输出、最近 30 天更新。
+- 运行 `python scripts/vault_lint.py --root .`，更新 `wiki/meta/lint-reports/lint-report-2026-07-02.md`，核心检查项均为 0。
 - Phase 2 收口：迁移旧 `wiki/concepts/`、`wiki/policies/`、`wiki/cases/`、`wiki/synthesis/` 剩余正式页到领域目录，旧技术分类目录不再作为主浏览入口。
 - 新增 `indexes/dataview/全部概念索引.md`、`全部案例索引.md`、`全部政策索引.md`、`全部source索引.md`，按 `type` 提供横向查看能力。
 - 更新 `CODEX.md`，明确正式知识卡必须放入领域目录，`type` 只作为 metadata，不决定物理目录。

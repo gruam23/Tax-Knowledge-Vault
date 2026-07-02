@@ -18,6 +18,13 @@ updated: 2026-07-02
 
 ## 2026-07-02
 
+- 统一 meta 入口策略：`wiki/00-meta/index.md` 改为兼容页，主入口回到 `wiki/hot.md`、`wiki/overview.md`、`wiki/log.md`、`wiki/meta/maintenance/` 和 `wiki/meta/lint-reports/`。
+- 加厚国际税、转让定价、VAT/GST 三个领域 MOC，新增领域定位、学习路径、核心知识卡、关键 source、输出入口、当前待补和页面成熟度说明。
+- 升级 `wiki/sources/index.md` 为来源中心，按 OECD/国际组织、中国官方、IRS/美国、HMRC/英国、EY/四大资料、判例、论文、网页剪藏分类；同步升级 `templates/source-template.md`。
+- 为受益所有人、常设机构、South Dakota v Wayfair、无形资产及 DEMPE、独立交易原则补“待补 Source 队列”。
+- 加厚 `outputs/interview/` 下 5 个面试资产，补 30 秒版、1 分钟版、3 分钟版、专业展开框架、可引用规则/案例、英文表达、可能追问、回答风险和 Sources。
+- 新增 Dataview 维护面板：Needs Review 页面、Developing 页面、Mature 知识资产、待补来源页面、适合转成输出的页面、最近30天更新。
+- 运行 lint 并更新 `lint-report-2026-07-02.md`：frontmatter、必填字段、枚举、日期、summary、死链、sources wikilink、reviewed/mature 空 sources、输出追溯问题均为 0。
 - Phase 2 收口：将 `wiki/concepts/` 中剩余的无形资产定价、全球公式分配法、跨国集团协同效应和主要 indirect_tax 页面迁入 `03-transfer-pricing/`、`06-eu-vat-gst/`；将 `wiki/policies/研发费用加计扣除.md` 迁入 `01-china-tax/`。
 - 清空旧 `wiki/concepts/`、`wiki/policies/`、`wiki/cases/`、`wiki/synthesis/` 正式页面目录；主导航和领域 MOC 不再引用旧 concepts 路径。
 - 新增按 `type` 聚合的 Dataview 索引：`全部概念索引.md`、`全部案例索引.md`、`全部政策索引.md`、`全部source索引.md`。

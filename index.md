@@ -38,6 +38,15 @@
 - [[indexes/dataview/全部政策索引]]
 - [[indexes/dataview/全部source索引]]
 
+## 维护面板
+
+- [[indexes/dataview/Needs Review 页面]]
+- [[indexes/dataview/Developing 页面]]
+- [[indexes/dataview/Mature 知识资产]]
+- [[indexes/dataview/待补来源页面]]
+- [[indexes/dataview/适合转成输出的页面]]
+- [[indexes/dataview/最近30天更新]]
+
 ## 工作区
 
 - `inbox/` — 每日临时收集
@@ -50,10 +59,12 @@
 
 ## 迁移与维护
 
-- [[wiki/00-meta/index]] — Phase 2 元信息和迁移说明
+- [[wiki/hot]] — 当前维护重点
+- [[wiki/overview]] — 知识覆盖总览
+- [[wiki/log]] — Wiki 层维护日志
 - [[wiki/meta/maintenance/wiki-tax-migration-2026-06-28]] — 母库内容迁移
 - [[wiki/meta/maintenance/obsidian-plugin-migration-2026-06-28]] — Obsidian 插件迁移
 - [[wiki/meta/maintenance/archive-root-optimization-2026-06-28]] — archive 规范吸收
 - [[wiki/meta/maintenance/index-rebuild-2026-06-28]] — 索引重构
 - [[wiki/meta/maintenance/automation-maintenance-2026-06-28]] — 自动任务维护
-- [[wiki/meta/lint-reports/lint-report-2026-06-28]] — 最新 lint 报告
+- [[wiki/meta/lint-reports/lint-report-2026-07-02]] — 最新 lint 报告
