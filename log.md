@@ -1,5 +1,12 @@
 # Vault Log
 
+## 2026-07-02
+
+- Phase 2 收口：迁移旧 `wiki/concepts/`、`wiki/policies/`、`wiki/cases/`、`wiki/synthesis/` 剩余正式页到领域目录，旧技术分类目录不再作为主浏览入口。
+- 新增 `indexes/dataview/全部概念索引.md`、`全部案例索引.md`、`全部政策索引.md`、`全部source索引.md`，按 `type` 提供横向查看能力。
+- 更新 `CODEX.md`，明确正式知识卡必须放入领域目录，`type` 只作为 metadata，不决定物理目录。
+- 运行 `python scripts/vault_lint.py --root .`，生成 `wiki/meta/lint-reports/lint-report-2026-07-02.md`，核心检查项均为 0。
+
 ## 2026-06-28
 
 - Phase 2 重构：在 `wiki/` 下建立 `00-meta` 到 `10-research-writing` 及 `sources` 的领域优先结构，每个目录补 `index.md` 作为 MOC。

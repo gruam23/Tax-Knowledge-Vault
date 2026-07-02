@@ -12,17 +12,18 @@ career_use: [study]
 sources: [CODEX.md]
 related: [税务知识库 Review 2026-06-28]
 created: 2026-06-28
-updated: 2026-06-28
+updated: 2026-07-02
 ---
 # 热缓存
 
 ## 当前重点
 
-Phase 1 框架已完成，母库内容已迁移。2026-06-28 已完成第一轮质量门优化：manifest 台账、lint 分类型规则、核心迁移页 metadata、source/related/raw 追溯均已收口。
+Phase 2 领域优先结构已收口。2026-07-02 已将旧 `wiki/concepts/`、`wiki/policies/`、`wiki/cases/`、`wiki/synthesis/` 中剩余正式页面迁入领域目录，`type` 改为只承担 metadata 和 Dataview 聚合职责。
 
 ## 高优先级下一步
 
-- 下一步优先补 `domains/` 和 `outputs/`，让知识库服务面试、memo 和研究输出。
+- 新建正式知识卡只放入领域目录，不再使用旧技术分类目录作为主浏览入口。
+- 使用 `indexes/dataview/全部概念索引.md`、`全部案例索引.md`、`全部政策索引.md`、`全部source索引.md` 按 `type` 查看。
 - 对 `needs-review` 页面补权威来源后再升为 `developing` 或 `reviewed`。
 - 每次新增或整理 10-20 个页面后运行一次 lint。
 - 保持 `raw/manifest.json` 与 source summary、派生页面同步更新。

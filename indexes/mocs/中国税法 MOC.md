@@ -4,7 +4,7 @@
 
 - [[../../wiki/01-china-tax/index]]
 - [[../../wiki/01-china-tax/中国增值税体系]]
-- [[../../wiki/policies/研发费用加计扣除]]
+- [[../../wiki/01-china-tax/研发费用加计扣除]]
 
 ## 待建设
 

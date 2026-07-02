@@ -11,6 +11,9 @@
 - 正式 wiki 页面至少应引用一个 source 页面或 raw 原始资料。证据不足的内容放入 `wiki/reviews/`。
 - 新增或重写正式 wiki 页面时必须使用三层渐进式详略结构：frontmatter `summary`、正文 `## 速览`、正文深度内容。
 - 重要知识点必须能回溯到 source summary 或 raw 原文位置，优先使用可点击 wikilink。
+- 新建正式知识卡必须放入对应领域目录，例如 `wiki/02-international-tax/`、`wiki/03-transfer-pricing/`、`wiki/06-eu-vat-gst/`。
+- `type` 只作为 metadata，用于 Dataview 和 lint，不决定物理目录。
+- 不再默认向 `wiki/concepts/`、`wiki/cases/`、`wiki/policies/` 新建页面；需要按类型查看时使用 `indexes/dataview/全部概念索引.md`、`全部案例索引.md`、`全部政策索引.md` 和 `全部source索引.md`。
 
 ## 每次操作前读取顺序
 
@@ -26,7 +29,7 @@
 
 1. 将原始资料放入 `raw/sources/` 或 `raw/assets/`。
 2. 在 `wiki/sources/` 创建 source summary。
-3. 创建或更新 concept、rule、policy、case、synthesis 等页面。
+3. 在对应领域目录创建或更新 concept、rule、policy、case、synthesis 等页面。
 4. 对每个新页面写入 `summary` 字段和正文 `## 速览`。
 5. 在“来源”或“参考素材”中标注文件名、页码、章节或可点击 raw 链接。
 6. 补充 related 链接并更新相关 MOC。
@@ -36,6 +39,7 @@
 ### Ingest 结束前检查单
 
 - [ ] 新增页面已加入相关 MOC 或 `wiki/index.md`。
+- [ ] 新增正式知识卡位于领域目录，不位于旧 `wiki/concepts/`、`wiki/cases/`、`wiki/policies/`。
 - [ ] 页面 frontmatter 包含 `summary`、`sources`、`related`。
 - [ ] 正文包含 `## 速览`。
 - [ ] 来源能追溯到 `wiki/sources/` 或 `raw/` 的具体文件/章节/页码。

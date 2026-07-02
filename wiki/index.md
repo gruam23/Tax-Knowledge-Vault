@@ -55,6 +55,13 @@ updated: 2026-06-28
 - [[../indexes/mocs/税务科技 MOC]] — 税务科技占位
 - [[../indexes/mocs/研究写作 MOC]] — 论文、memo、输出方法占位
 
+## 按 Type 查看
+
+- [[../indexes/dataview/全部概念索引]] — 所有 `type: concept` 页面
+- [[../indexes/dataview/全部案例索引]] — 所有 `type: case` 页面
+- [[../indexes/dataview/全部政策索引]] — 所有 `type: policy` 页面
+- [[../indexes/dataview/全部source索引]] — 所有 `type: source` 页面
+
 ## 实体 (Entities)
 
 - [[entities/OECD]] — 国际税收规则制定核心机构，OECD TPG 和 BEPS 的关键来源
@@ -72,15 +79,15 @@ updated: 2026-06-28
 ### 转让定价：基础理论
 
 - [[03-transfer-pricing/独立交易原则]] (Arm's Length Principle)
-- [[concepts/transfer_pricing/全球公式分配法]] (Global Formulary Apportionment)
+- [[03-transfer-pricing/全球公式分配法]] (Global Formulary Apportionment)
 - [[03-transfer-pricing/可比性分析]] (Comparability Analysis)
 - [[03-transfer-pricing/转移定价方法]] (Transfer Pricing Methods)
 
 ### 转让定价：价值创造与复杂交易
 
 - [[03-transfer-pricing/无形资产及DEMPE原则]] (Intangibles and DEMPE)
-- [[concepts/无形资产定价]] (Intangibles Pricing)
-- [[concepts/transfer_pricing/跨国集团协同效应]] (MNE Group Synergies)
+- [[03-transfer-pricing/无形资产定价]] (Intangibles Pricing)
+- [[03-transfer-pricing/跨国集团协同效应]] (MNE Group Synergies)
 - [[03-transfer-pricing/集团内服务]] (Intra-Group Services)
 - [[03-transfer-pricing/成本分摊协议]] (Cost Contribution Arrangements)
 - [[03-transfer-pricing/业务重组]] (Business Restructurings)
@@ -94,34 +101,34 @@ updated: 2026-06-28
 
 ### 间接税基础
 
-- [[concepts/indirect_tax/增值税(VAT-GST)]] (VAT / GST)
+- [[06-eu-vat-gst/增值税(VAT-GST)]] (VAT / GST)
 - [[06-eu-vat-gst/欧盟增值税体系]] (EU VAT System)
-- [[concepts/indirect_tax/欧盟增值税术语词典]] (EU VAT Glossary)
+- [[06-eu-vat-gst/欧盟增值税术语词典]] (EU VAT Glossary)
 
 ### 主要国家/地区间接税
 
 #### 欧洲
 
-- [[concepts/indirect_tax/德国增值税体系]] (Germany VAT)
-- [[concepts/indirect_tax/法国增值税体系]] (France VAT)
+- [[06-eu-vat-gst/德国增值税体系]] (Germany VAT)
+- [[06-eu-vat-gst/法国增值税体系]] (France VAT)
 - [[05-uk-tax/英国增值税体系]] (United Kingdom VAT)
 
 #### 亚太
 
 - [[01-china-tax/中国增值税体系]] (China Mainland VAT)
-- [[concepts/indirect_tax/日本消费税体系]] (Japan Consumption Tax)
-- [[concepts/indirect_tax/印度GST体系]] (India GST)
-- [[concepts/indirect_tax/新加坡GST体系]] (Singapore GST)
-- [[concepts/indirect_tax/澳大利亚GST体系]] (Australia GST)
+- [[06-eu-vat-gst/日本消费税体系]] (Japan Consumption Tax)
+- [[06-eu-vat-gst/印度GST体系]] (India GST)
+- [[06-eu-vat-gst/新加坡GST体系]] (Singapore GST)
+- [[06-eu-vat-gst/澳大利亚GST体系]] (Australia GST)
 
 #### 美洲
 
 - [[04-us-tax/美国销售税体系]] (US Sales & Use Tax)
-- [[concepts/indirect_tax/加拿大GST-HST体系]] (Canada GST/HST/QST/PST)
+- [[06-eu-vat-gst/加拿大GST-HST体系]] (Canada GST/HST/QST/PST)
 
 ## 政策与案例
 
-- [[policies/研发费用加计扣除]] — 中国企业所得税研发优惠示例页
+- [[01-china-tax/研发费用加计扣除]] — 中国企业所得税研发优惠示例页
 - [[07-tax-treaties-and-cases/South Dakota v Wayfair]] — 美国 sales tax economic nexus 核心案例
 
 ## 素材摘要 (Sources)

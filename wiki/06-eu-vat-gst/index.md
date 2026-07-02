@@ -22,14 +22,14 @@ updated: 2026-06-28
 - [[../04-us-tax/美国销售税体系]]
 - [[../05-uk-tax/英国增值税体系]]
 
-## 技术目录暂存
+## 间接税专题
 
-- [[../concepts/indirect_tax/增值税(VAT-GST)]]
-- [[../concepts/indirect_tax/欧盟增值税术语词典]]
-- [[../concepts/indirect_tax/德国增值税体系]]
-- [[../concepts/indirect_tax/法国增值税体系]]
-- [[../concepts/indirect_tax/日本消费税体系]]
-- [[../concepts/indirect_tax/印度GST体系]]
-- [[../concepts/indirect_tax/新加坡GST体系]]
-- [[../concepts/indirect_tax/澳大利亚GST体系]]
-- [[../concepts/indirect_tax/加拿大GST-HST体系]]
+- [[增值税(VAT-GST)]]
+- [[欧盟增值税术语词典]]
+- [[德国增值税体系]]
+- [[法国增值税体系]]
+- [[日本消费税体系]]
+- [[印度GST体系]]
+- [[新加坡GST体系]]
+- [[澳大利亚GST体系]]
+- [[加拿大GST-HST体系]]

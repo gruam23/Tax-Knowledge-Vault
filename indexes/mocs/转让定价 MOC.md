@@ -18,7 +18,7 @@
 ## 基础原则
 
 - [[../../wiki/03-transfer-pricing/独立交易原则]]
-- [[../../wiki/concepts/transfer_pricing/全球公式分配法]]
+- [[../../wiki/03-transfer-pricing/全球公式分配法]]
 
 ## 方法论工具
 
@@ -28,12 +28,12 @@
 ## 高级交易场景
 
 - [[../../wiki/03-transfer-pricing/无形资产及DEMPE原则]]
-- [[../../wiki/concepts/无形资产定价]]
+- [[../../wiki/03-transfer-pricing/无形资产定价]]
 - [[../../wiki/03-transfer-pricing/集团内服务]]
 - [[../../wiki/03-transfer-pricing/成本分摊协议]]
 - [[../../wiki/03-transfer-pricing/业务重组]]
 - [[../../wiki/03-transfer-pricing/金融交易]]
-- [[../../wiki/concepts/transfer_pricing/跨国集团协同效应]]
+- [[../../wiki/03-transfer-pricing/跨国集团协同效应]]
 
 ## 合规和争议解决
 

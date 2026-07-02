@@ -31,6 +31,13 @@
 - [[indexes/mocs/税务科技 MOC]]
 - [[indexes/mocs/研究写作 MOC]]
 
+## 类型索引
+
+- [[indexes/dataview/全部概念索引]]
+- [[indexes/dataview/全部案例索引]]
+- [[indexes/dataview/全部政策索引]]
+- [[indexes/dataview/全部source索引]]
+
 ## 工作区
 
 - `inbox/` — 每日临时收集
@@ -39,7 +46,7 @@
 - `domains/` — 学习路线和职业能力地图
 - `outputs/` — memo、面试回答、研究报告、PPT、作品集
 - `templates/` — 中文模板
-- `indexes/` — MOC 和 Dataview 索引
+- `indexes/` — MOC 和按 `type` 聚合的 Dataview 索引
 
 ## 迁移与维护
 

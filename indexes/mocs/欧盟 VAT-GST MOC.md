@@ -16,28 +16,28 @@
 
 ## 基础概念
 
-- [[../../wiki/concepts/indirect_tax/增值税(VAT-GST)]]
+- [[../../wiki/06-eu-vat-gst/增值税(VAT-GST)]]
 - [[../../wiki/06-eu-vat-gst/欧盟增值税体系]]
-- [[../../wiki/concepts/indirect_tax/欧盟增值税术语词典]]
+- [[../../wiki/06-eu-vat-gst/欧盟增值税术语词典]]
 
 ## 欧洲
 
-- [[../../wiki/concepts/indirect_tax/德国增值税体系]]
-- [[../../wiki/concepts/indirect_tax/法国增值税体系]]
+- [[../../wiki/06-eu-vat-gst/德国增值税体系]]
+- [[../../wiki/06-eu-vat-gst/法国增值税体系]]
 - [[../../wiki/05-uk-tax/英国增值税体系]]
 
 ## 亚太
 
 - [[../../wiki/01-china-tax/中国增值税体系]]
-- [[../../wiki/concepts/indirect_tax/日本消费税体系]]
-- [[../../wiki/concepts/indirect_tax/印度GST体系]]
-- [[../../wiki/concepts/indirect_tax/新加坡GST体系]]
-- [[../../wiki/concepts/indirect_tax/澳大利亚GST体系]]
+- [[../../wiki/06-eu-vat-gst/日本消费税体系]]
+- [[../../wiki/06-eu-vat-gst/印度GST体系]]
+- [[../../wiki/06-eu-vat-gst/新加坡GST体系]]
+- [[../../wiki/06-eu-vat-gst/澳大利亚GST体系]]
 
 ## 美洲
 
 - [[../../wiki/04-us-tax/美国销售税体系]]
-- [[../../wiki/concepts/indirect_tax/加拿大GST-HST体系]]
+- [[../../wiki/06-eu-vat-gst/加拿大GST-HST体系]]
 
 ## 待补
 

@@ -12,9 +12,17 @@ career_use: [study]
 sources: [CODEX.md]
 related: [税务知识库 Review 2026-06-28]
 created: 2026-06-28
-updated: 2026-06-28
+updated: 2026-07-02
 ---
 # Wiki 日志
+
+## 2026-07-02
+
+- Phase 2 收口：将 `wiki/concepts/` 中剩余的无形资产定价、全球公式分配法、跨国集团协同效应和主要 indirect_tax 页面迁入 `03-transfer-pricing/`、`06-eu-vat-gst/`；将 `wiki/policies/研发费用加计扣除.md` 迁入 `01-china-tax/`。
+- 清空旧 `wiki/concepts/`、`wiki/policies/`、`wiki/cases/`、`wiki/synthesis/` 正式页面目录；主导航和领域 MOC 不再引用旧 concepts 路径。
+- 新增按 `type` 聚合的 Dataview 索引：`全部概念索引.md`、`全部案例索引.md`、`全部政策索引.md`、`全部source索引.md`。
+- 更新 `CODEX.md` 和 `wiki/hot.md`，明确 `type` 只作为 metadata，正式知识卡必须放入领域目录。
+- 运行 lint 并生成 `lint-report-2026-07-02.md`：frontmatter、必填字段、枚举、日期、summary、死链、sources wikilink、reviewed/mature 空 sources、输出追溯问题均为 0。
 
 ## 2026-06-28
 
