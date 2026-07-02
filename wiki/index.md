@@ -17,7 +17,7 @@ updated: 2026-06-28
 
 # Wiki 索引
 
-> 税务知识主库 | 概念：31 | 实体：2 | 素材摘要：2 | 原始资料：43 | Wiki 页面：53
+> 税务知识主库 | Phase 2 领域优先结构 | 内容页：53 | 领域 MOC：12 | 原始资料：43
 
 ## 快速入口
 
@@ -28,6 +28,21 @@ updated: 2026-06-28
 - [[meta/lint-reports/lint-report-2026-06-28|最新 Lint 报告]] — 结构质量检查
 
 ## MOC 导航
+
+- [[00-meta/index]] — 元信息、维护和迁移记录
+- [[01-china-tax/index]] — 中国税法
+- [[02-international-tax/index]] — 国际税基础框架、BEPS、常设机构、受益所有人
+- [[03-transfer-pricing/index]] — OECD TPG、独立交易原则、可比性、DEMPE、金融交易
+- [[04-us-tax/index]] — 美国税法和销售税
+- [[05-uk-tax/index]] — 英国税法和 VAT
+- [[06-eu-vat-gst/index]] — EU VAT/GST 和主要国家间接税
+- [[07-tax-treaties-and-cases/index]] — 税收协定与案例
+- [[08-industries/index]] — 行业税务
+- [[09-tax-tech/index]] — 税务科技
+- [[10-research-writing/index]] — 研究写作
+- [[sources/index]] — 来源摘要
+
+## 传统 MOC
 
 - [[../indexes/mocs/国际税 MOC]] — 国际税基本框架、BEPS、常设机构、受益所有人
 - [[../indexes/mocs/税收协定与案例 MOC]] — 协定待遇、反滥用、案例入口
@@ -49,38 +64,38 @@ updated: 2026-06-28
 
 ### 国际税与协定
 
-- [[concepts/BEPS行动计划]] — OECD/G20 反税基侵蚀和利润转移的国际税改框架
-- [[concepts/受益所有人]] — 协定优惠和反导管分析入口
-- [[concepts/常设机构]] — 非居民来源国征税权判断入口
-- [[synthesis/国际税核心框架]] — 国际税分析总框架
+- [[02-international-tax/BEPS行动计划]] — OECD/G20 反税基侵蚀和利润转移的国际税改框架
+- [[02-international-tax/受益所有人]] — 协定优惠和反导管分析入口
+- [[02-international-tax/常设机构]] — 非居民来源国征税权判断入口
+- [[02-international-tax/国际税核心框架]] — 国际税分析总框架
 
 ### 转让定价：基础理论
 
-- [[concepts/transfer_pricing/独立交易原则]] (Arm's Length Principle)
+- [[03-transfer-pricing/独立交易原则]] (Arm's Length Principle)
 - [[concepts/transfer_pricing/全球公式分配法]] (Global Formulary Apportionment)
-- [[concepts/transfer_pricing/可比性分析]] (Comparability Analysis)
-- [[concepts/transfer_pricing/转移定价方法]] (Transfer Pricing Methods)
+- [[03-transfer-pricing/可比性分析]] (Comparability Analysis)
+- [[03-transfer-pricing/转移定价方法]] (Transfer Pricing Methods)
 
 ### 转让定价：价值创造与复杂交易
 
-- [[concepts/transfer_pricing/无形资产及DEMPE原则]] (Intangibles and DEMPE)
+- [[03-transfer-pricing/无形资产及DEMPE原则]] (Intangibles and DEMPE)
 - [[concepts/无形资产定价]] (Intangibles Pricing)
 - [[concepts/transfer_pricing/跨国集团协同效应]] (MNE Group Synergies)
-- [[concepts/transfer_pricing/集团内服务]] (Intra-Group Services)
-- [[concepts/transfer_pricing/成本分摊协议]] (Cost Contribution Arrangements)
-- [[concepts/transfer_pricing/业务重组]] (Business Restructurings)
-- [[concepts/transfer_pricing/金融交易]] (Financial Transactions)
+- [[03-transfer-pricing/集团内服务]] (Intra-Group Services)
+- [[03-transfer-pricing/成本分摊协议]] (Cost Contribution Arrangements)
+- [[03-transfer-pricing/业务重组]] (Business Restructurings)
+- [[03-transfer-pricing/金融交易]] (Financial Transactions)
 
 ### 转让定价：合规与争议解决
 
-- [[concepts/transfer_pricing/转让定价同期资料]] (Transfer Pricing Documentation)
-- [[concepts/transfer_pricing/相互协商程序与对应调整]] (MAP and Corresponding Adjustments)
-- [[concepts/预约定价安排]] (Advance Pricing Arrangement)
+- [[03-transfer-pricing/转让定价同期资料]] (Transfer Pricing Documentation)
+- [[03-transfer-pricing/相互协商程序与对应调整]] (MAP and Corresponding Adjustments)
+- [[03-transfer-pricing/预约定价安排]] (Advance Pricing Arrangement)
 
 ### 间接税基础
 
 - [[concepts/indirect_tax/增值税(VAT-GST)]] (VAT / GST)
-- [[concepts/indirect_tax/欧盟增值税体系]] (EU VAT System)
+- [[06-eu-vat-gst/欧盟增值税体系]] (EU VAT System)
 - [[concepts/indirect_tax/欧盟增值税术语词典]] (EU VAT Glossary)
 
 ### 主要国家/地区间接税
@@ -89,11 +104,11 @@ updated: 2026-06-28
 
 - [[concepts/indirect_tax/德国增值税体系]] (Germany VAT)
 - [[concepts/indirect_tax/法国增值税体系]] (France VAT)
-- [[concepts/indirect_tax/英国增值税体系]] (United Kingdom VAT)
+- [[05-uk-tax/英国增值税体系]] (United Kingdom VAT)
 
 #### 亚太
 
-- [[concepts/indirect_tax/中国增值税体系]] (China Mainland VAT)
+- [[01-china-tax/中国增值税体系]] (China Mainland VAT)
 - [[concepts/indirect_tax/日本消费税体系]] (Japan Consumption Tax)
 - [[concepts/indirect_tax/印度GST体系]] (India GST)
 - [[concepts/indirect_tax/新加坡GST体系]] (Singapore GST)
@@ -101,13 +116,13 @@ updated: 2026-06-28
 
 #### 美洲
 
-- [[concepts/indirect_tax/美国销售税体系]] (US Sales & Use Tax)
+- [[04-us-tax/美国销售税体系]] (US Sales & Use Tax)
 - [[concepts/indirect_tax/加拿大GST-HST体系]] (Canada GST/HST/QST/PST)
 
 ## 政策与案例
 
 - [[policies/研发费用加计扣除]] — 中国企业所得税研发优惠示例页
-- [[cases/South Dakota v Wayfair]] — 美国 sales tax economic nexus 核心案例
+- [[07-tax-treaties-and-cases/South Dakota v Wayfair]] — 美国 sales tax economic nexus 核心案例
 
 ## 素材摘要 (Sources)
 
@@ -146,7 +161,7 @@ updated: 2026-06-28
 
 ## 综合分析 (Synthesis)
 
-- [[synthesis/国际税核心框架]] — 国际税分析的七步框架
+- [[02-international-tax/国际税核心框架]] — 国际税分析的七步框架
 
 ## 维护与迁移
 

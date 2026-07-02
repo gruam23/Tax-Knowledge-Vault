@@ -1,0 +1,28 @@
+---
+title: 税收协定与案例 MOC
+type: meta
+summary: 税收协定、反滥用、常设机构和重要税案入口
+field: tax-treaties-and-cases
+jurisdiction: global
+status: reviewed
+created: 2026-06-28
+updated: 2026-06-28
+---
+# 税收协定与案例 MOC
+
+## 协定概念
+
+- [[../02-international-tax/受益所有人]]
+- [[../02-international-tax/常设机构]]
+- [[../02-international-tax/BEPS行动计划]]
+
+## 案例
+
+- [[South Dakota v Wayfair]]
+
+## 待建设
+
+- Treaty interpretation
+- Beneficial ownership cases
+- Permanent establishment cases
+- Principal purpose test

@@ -2,10 +2,10 @@
 
 ## 学习路线
 
-- [[../../wiki/concepts/BEPS行动计划]]
-- [[../../wiki/concepts/受益所有人]]
-- [[../../wiki/concepts/常设机构]]
-- [[../../wiki/synthesis/国际税核心框架]]
+- [[../../wiki/02-international-tax/BEPS行动计划]]
+- [[../../wiki/02-international-tax/受益所有人]]
+- [[../../wiki/02-international-tax/常设机构]]
+- [[../../wiki/02-international-tax/国际税核心框架]]
 
 ## 待建设
 

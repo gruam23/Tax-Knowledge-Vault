@@ -1,5 +1,9 @@
 # 研究写作 MOC
 
+## 领域入口
+
+- [[../../wiki/10-research-writing/index]]
+
 ## 待建设
 
 - 文献笔记

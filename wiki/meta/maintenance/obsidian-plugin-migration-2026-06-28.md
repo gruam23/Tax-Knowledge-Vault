@@ -9,7 +9,7 @@ level: basic
 confidence: high
 source_quality: primary
 career_use: [study]
-sources: [E:\agent\Knowledge\wiki-tax\.obsidian]
+sources: [../wiki-tax\.obsidian]
 related: [wiki-tax 迁移记录 2026-06-28]
 created: 2026-06-28
 updated: 2026-06-28

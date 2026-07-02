@@ -1,6 +1,6 @@
 # 税务知识库
 
-> 主力 vault | Wiki 页面：53 | 概念：31 | 素材摘要：2 | 原始资料：43 | 自动维护：每日 / 每周 / 每月
+> 主力 vault | Phase 2 领域优先结构 | Wiki 内容页：53 | 领域 MOC：12 | 自动维护：每日 / 每周 / 每月
 
 ## 开始
 
@@ -13,6 +13,13 @@
 
 ## 核心 MOC
 
+- [[wiki/01-china-tax/index]]
+- [[wiki/02-international-tax/index]]
+- [[wiki/03-transfer-pricing/index]]
+- [[wiki/04-us-tax/index]]
+- [[wiki/05-uk-tax/index]]
+- [[wiki/06-eu-vat-gst/index]]
+- [[wiki/07-tax-treaties-and-cases/index]]
 - [[indexes/mocs/国际税 MOC]]
 - [[indexes/mocs/税收协定与案例 MOC]]
 - [[indexes/mocs/转让定价 MOC]]
@@ -28,7 +35,7 @@
 
 - `inbox/` — 每日临时收集
 - `raw/` — 原始资料和 PDF/Markdown 抽取文本
-- `wiki/` — 结构化知识
+- `wiki/` — Phase 2 领域优先结构化知识
 - `domains/` — 学习路线和职业能力地图
 - `outputs/` — memo、面试回答、研究报告、PPT、作品集
 - `templates/` — 中文模板
@@ -36,6 +43,7 @@
 
 ## 迁移与维护
 
+- [[wiki/00-meta/index]] — Phase 2 元信息和迁移说明
 - [[wiki/meta/maintenance/wiki-tax-migration-2026-06-28]] — 母库内容迁移
 - [[wiki/meta/maintenance/obsidian-plugin-migration-2026-06-28]] — Obsidian 插件迁移
 - [[wiki/meta/maintenance/archive-root-optimization-2026-06-28]] — archive 规范吸收

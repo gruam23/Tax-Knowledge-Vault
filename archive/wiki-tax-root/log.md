@@ -72,5 +72,5 @@ title: "操作日志"
 
 ## [2026-04-28] init | 知识库初始化
 - 创建知识库：国际税收研究
-- 路径：E:\agent\Knowledge\wiki-tax
+- 路径：../wiki-tax
 - 研究方向：CRS / 转移定价 / 国际税收协定 / BEPS / 计量方法

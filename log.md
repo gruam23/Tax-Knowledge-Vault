@@ -2,9 +2,14 @@
 
 ## 2026-06-28
 
-- Initialized Phase 1 vault scaffold at `E:\agent\Knowledge\Tax-Knowledge-Vault`.
+- Phase 2 重构：在 `wiki/` 下建立 `00-meta` 到 `10-research-writing` 及 `sources` 的领域优先结构，每个目录补 `index.md` 作为 MOC。
+- 将受益所有人、常设机构、国际税核心框架、BEPS、转让定价核心专题、主要 VAT/Sales Tax 页面和 Wayfair 案迁入领域目录。
+- 升级 `schema.md`、`README.md`、`.gitignore`、`templates/concept-template.md` 和 `scripts/vault_lint.py`，新增 PyYAML frontmatter lint、枚举校验、日期校验、summary 长度校验和 sources wikilink 校验。
+- 扩写 `受益所有人` 与 `常设机构` 为研究型知识卡；因尚未补权威来源，均保留 `status: needs-review` 与 `sources: []`。
+- 新增 `outputs/interview/` 下 5 个面试回答模板，并重新生成 `wiki/meta/lint-reports/lint-report-2026-06-28.md`，新版 lint 摘要为 0 个 frontmatter、枚举、日期、summary、死链、sources 和输出追溯问题。
+- Initialized Phase 1 vault scaffold at `本仓库根目录`.
 - Created core directories, root files, templates, Dataview indexes, MOCs, and seed notes.
-- Parent vault `E:\agent\Knowledge\wiki-tax` treated as read-only.
+- Parent vault `../wiki-tax` treated as read-only.
 - Migrated parent vault content into this vault without modifying `wiki-tax`: wiki pages, raw PDF files, Markdown extractions, original templates, and root reference docs.
 - Added maintenance playbook and reusable lint script for recurring vault reviews.
 - Completed first post-migration review and created daily, weekly, and monthly Codex maintenance automations.

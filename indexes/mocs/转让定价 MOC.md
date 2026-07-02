@@ -6,6 +6,7 @@
 
 ## 来源入口
 
+- [[../../wiki/03-transfer-pricing/index]]
 - [[../../wiki/sources/2026-04-28-OECD-TPG-2022]]
 - [[../../raw/assets/pdfs/wiki-tax/2022-OECD TRANSFER PRICING GUIDELINES 2022.pdf|OECD TPG 2022 PDF]]
 - [[../../raw/assets/extracted/wiki-tax/2022-OECD-TPG-extracted|OECD TPG pp.1-60]]
@@ -16,29 +17,29 @@
 
 ## 基础原则
 
-- [[../../wiki/concepts/transfer_pricing/独立交易原则]]
+- [[../../wiki/03-transfer-pricing/独立交易原则]]
 - [[../../wiki/concepts/transfer_pricing/全球公式分配法]]
 
 ## 方法论工具
 
-- [[../../wiki/concepts/transfer_pricing/可比性分析]]
-- [[../../wiki/concepts/transfer_pricing/转移定价方法]]
+- [[../../wiki/03-transfer-pricing/可比性分析]]
+- [[../../wiki/03-transfer-pricing/转移定价方法]]
 
 ## 高级交易场景
 
-- [[../../wiki/concepts/transfer_pricing/无形资产及DEMPE原则]]
+- [[../../wiki/03-transfer-pricing/无形资产及DEMPE原则]]
 - [[../../wiki/concepts/无形资产定价]]
-- [[../../wiki/concepts/transfer_pricing/集团内服务]]
-- [[../../wiki/concepts/transfer_pricing/成本分摊协议]]
-- [[../../wiki/concepts/transfer_pricing/业务重组]]
-- [[../../wiki/concepts/transfer_pricing/金融交易]]
+- [[../../wiki/03-transfer-pricing/集团内服务]]
+- [[../../wiki/03-transfer-pricing/成本分摊协议]]
+- [[../../wiki/03-transfer-pricing/业务重组]]
+- [[../../wiki/03-transfer-pricing/金融交易]]
 - [[../../wiki/concepts/transfer_pricing/跨国集团协同效应]]
 
 ## 合规和争议解决
 
-- [[../../wiki/concepts/transfer_pricing/转让定价同期资料]]
-- [[../../wiki/concepts/transfer_pricing/相互协商程序与对应调整]]
-- [[../../wiki/concepts/预约定价安排]]
+- [[../../wiki/03-transfer-pricing/转让定价同期资料]]
+- [[../../wiki/03-transfer-pricing/相互协商程序与对应调整]]
+- [[../../wiki/03-transfer-pricing/预约定价安排]]
 
 ## 待补
 

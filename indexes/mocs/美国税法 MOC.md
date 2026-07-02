@@ -1,8 +1,10 @@
 # 美国税法 MOC
 
-## 核心案例
+## 核心主题
 
-- [[../../wiki/cases/South Dakota v Wayfair]]
+- [[../../wiki/04-us-tax/index]]
+- [[../../wiki/04-us-tax/美国销售税体系]]
+- [[../../wiki/07-tax-treaties-and-cases/South Dakota v Wayfair]]
 
 ## 待建设
 

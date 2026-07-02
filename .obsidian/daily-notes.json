@@ -1,0 +1,6 @@
+﻿{
+  "folder": "inbox",
+  "autorun": false,
+  "template": "templates/interview-template.md",
+  "format": "YYYY-MM-DD-ddd"
+}

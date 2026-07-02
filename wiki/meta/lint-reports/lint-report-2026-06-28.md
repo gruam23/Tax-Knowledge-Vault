@@ -10,19 +10,23 @@ status: reviewed
 
 ## 摘要
 
-- Wiki Markdown 文件数：54
-- 参与链接检查的 Markdown 文件数：100
-- 缺失 frontmatter：0
-- 缺失必填 frontmatter 字段：0
-- 死链数量：0
-- `sources` 为空的 wiki 页面：0
-- `related` 为空的 wiki 页面：0
-- seed 状态页面：0
+- 参与 frontmatter 检查的 Markdown 文件数：67
+- 参与链接检查的 Markdown 文件数：118
+- frontmatter 解析错误：0
+- 缺失必填字段：0
+- 枚举值错误：0
+- 日期格式错误：0
+- summary 长度错误：0
+- 正文死链：0
+- `sources` wikilink 错误：0
+- `reviewed/mature` 但 sources 为空：0
+- `related` 为空的正式页面：0
+- seed 页面：0
 - 缺失 `## 速览` 的正式页面：0
 - 未被 wiki 正文引用的 raw 文件：0
 - 输出材料可追溯性问题：0
 
-## 缺失 Frontmatter
+## Frontmatter 解析错误
 
 - 无
 
@@ -30,15 +34,31 @@ status: reviewed
 
 - 无
 
-## 死链
+## 枚举值错误
 
 - 无
 
-## 缺失来源字段 sources
+## 日期格式错误
 
 - 无
 
-## 缺失相关链接字段 related
+## Summary 长度错误
+
+- 无
+
+## 正文死链
+
+- 无
+
+## Sources Wikilink 错误
+
+- 无
+
+## Reviewed/Mature 缺少 sources
+
+- 无
+
+## 缺失 related
 
 - 无
 
@@ -60,6 +80,6 @@ status: reviewed
 
 ## 建议修复
 
-- 将本报告作为维护队列；在继续大量新增笔记前，优先修复死链和来源可追溯性问题。
-- 迁移页面在 sources、related、raw 原文指针完成复核前，应保持 `needs-review` 或 `developing` 状态，不要提前标为 `reviewed`。
-- 每次周度 ingest 后重新运行本脚本，并与上一份报告对比指标变化。
+- reviewed/mature 页面必须至少保留一个可解析来源；来源不足时降为 needs-review 或 developing。
+- 迁移页面后同步更新 `wiki/index.md`、领域 `index.md` 和 `indexes/mocs/`。
+- sources 中的 wikilink 应指向 source summary 或 raw 原文，避免只写不可追踪的文字来源。

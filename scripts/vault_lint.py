@@ -6,8 +6,12 @@ from __future__ import annotations
 import argparse
 import datetime as dt
 import json
+import posixpath
 import re
 from pathlib import Path
+from typing import Any
+
+import yaml
 
 
 BASE_REQUIRED_FIELDS = [
@@ -56,6 +60,28 @@ ENTITY_REQUIRED_FIELDS = BASE_REQUIRED_FIELDS + [
     "sources",
 ]
 
+ALLOWED_STATUS = {"seed", "draft", "developing", "reviewed", "mature", "needs-review", "deprecated"}
+ALLOWED_FIELDS = {
+    "china-tax",
+    "international-tax",
+    "transfer-pricing",
+    "indirect-tax",
+    "us-tax",
+    "uk-tax",
+    "eu-vat-gst",
+    "tax-treaties",
+    "tax-treaties-and-cases",
+    "industries",
+    "tax-tech",
+    "research-writing",
+    "career-roadmap",
+    "maintenance",
+}
+ALLOWED_CONFIDENCE = {"low", "medium", "high"}
+ALLOWED_SOURCE_QUALITY = {"primary", "official", "professional", "academic", "mixed", "unknown"}
+ALLOWED_CAREER_USE = {"interview", "memo", "research", "presentation", "portfolio", "study"}
+SUMMARY_MAX_CHARS = 120
+DATE_RE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
 WIKILINK_RE = re.compile(r"\[\[([^\]]+)\]\]")
 
 
@@ -67,26 +93,25 @@ def read_text(path: Path) -> str:
     return path.read_text(encoding="utf-8-sig", errors="replace")
 
 
-def frontmatter(text: str) -> dict[str, str] | None:
+def parse_frontmatter(text: str) -> tuple[dict[str, Any] | None, str | None]:
     lines = text.splitlines()
     if not lines or lines[0].strip() != "---":
-        return None
-    data: dict[str, str] = {}
-    current_key: str | None = None
-    for line in lines[1:]:
+        return None, "missing frontmatter delimiter"
+    for idx, line in enumerate(lines[1:], start=1):
         if line.strip() == "---":
-            return data
-        if ":" in line and not line.startswith((" ", "\t", "-")):
-            key, value = line.split(":", 1)
-            current_key = key.strip()
-            data[current_key] = value.strip()
-        elif current_key and line.lstrip().startswith("-"):
-            data[current_key] = "__list__"
-    return None
+            raw = "\n".join(lines[1:idx])
+            try:
+                data = yaml.safe_load(raw) or {}
+            except yaml.YAMLError as exc:
+                return None, f"invalid YAML: {exc}"
+            if not isinstance(data, dict):
+                return None, "frontmatter is not a mapping"
+            return data, None
+    return None, "missing closing frontmatter delimiter"
 
 
-def required_fields_for(fm: dict[str, str]) -> list[str]:
-    page_type = fm.get("type", "")
+def required_fields_for(fm: dict[str, Any]) -> list[str]:
+    page_type = str(fm.get("type", ""))
     if page_type in FORMAL_TYPES:
         return FORMAL_REQUIRED_FIELDS
     if page_type == "source":
@@ -98,16 +123,33 @@ def required_fields_for(fm: dict[str, str]) -> list[str]:
     return BASE_REQUIRED_FIELDS
 
 
-def should_require_sources(fm: dict[str, str]) -> bool:
-    if fm.get("status") in {"seed", "needs-review"}:
+def has_value(value: Any) -> bool:
+    if value is None:
         return False
-    return fm.get("type") in FORMAL_TYPES | {"source", "entity"}
+    if isinstance(value, str):
+        return value.strip() != ""
+    if isinstance(value, (list, tuple, set, dict)):
+        return len(value) > 0
+    return True
 
 
-def should_require_related(fm: dict[str, str]) -> bool:
-    if fm.get("type") in {"meta", "review"}:
-        return False
-    return fm.get("status") not in {"seed", "needs-review"}
+def as_list(value: Any) -> list[Any]:
+    if value is None:
+        return []
+    if isinstance(value, list):
+        return value
+    return [value]
+
+
+def should_require_sources(fm: dict[str, Any]) -> bool:
+    page_type = str(fm.get("type", ""))
+    return str(fm.get("status", "")) in {"reviewed", "mature"} and page_type in FORMAL_TYPES | {"source", "entity"}
+
+
+def should_require_related(fm: dict[str, Any]) -> bool:
+    page_type = str(fm.get("type", ""))
+    status = str(fm.get("status", ""))
+    return page_type not in {"meta", "review"} and status not in {"seed", "needs-review", "deprecated"}
 
 
 def link_target(raw: str) -> str:
@@ -121,36 +163,57 @@ def build_page_index(linkable_files: list[Path], root: Path) -> tuple[set[str], 
     paths: set[str] = set()
     stems: set[str] = set()
     for path in linkable_files:
-        stem = path.stem
-        stems.add(stem)
-        r = rel(path.with_suffix(""), root)
-        paths.add(r)
-        paths.add(rel(path, root))
-        if r.startswith("wiki/"):
-            paths.add(r.removeprefix("wiki/"))
-        if r.startswith("indexes/"):
-            paths.add(r.removeprefix("indexes/"))
-        if r.startswith("raw/assets/extracted/wiki-tax/"):
-            paths.add(r.removeprefix("raw/assets/extracted/wiki-tax/"))
-        if r.startswith("raw/assets/pdfs/wiki-tax/"):
-            paths.add(r.removeprefix("raw/assets/pdfs/wiki-tax/"))
+        r_file = rel(path, root)
+        r_no_suffix = rel(path.with_suffix(""), root)
+        stems.add(path.stem)
+        for value in {r_file, r_no_suffix}:
+            paths.add(value)
+            if value.startswith("wiki/"):
+                paths.add(value.removeprefix("wiki/"))
+            if value.startswith("indexes/"):
+                paths.add(value.removeprefix("indexes/"))
+            if value.startswith("raw/assets/extracted/wiki-tax/"):
+                paths.add(value.removeprefix("raw/assets/extracted/wiki-tax/"))
+            if value.startswith("raw/assets/pdfs/wiki-tax/"):
+                paths.add(value.removeprefix("raw/assets/pdfs/wiki-tax/"))
     return paths, stems
 
 
 def resolves_link(target: str, source: Path, root: Path, paths: set[str], stems: set[str]) -> bool:
-    if not target:
+    if not target or target.startswith(("http://", "https://", "mailto:")):
         return True
     if target in stems or target in paths:
         return True
+    source_dir = rel(source.parent, root)
+    candidates = [target]
     if "/" in target:
-        source_dir = source.parent.relative_to(root)
-        candidate = (source_dir / target).as_posix()
-        normalized = Path(candidate).as_posix()
-        normalized = re.sub(r"(^|/)\./", r"\1", normalized)
-        while "/../" in normalized:
-            normalized = re.sub(r"[^/]+/\.\./", "", normalized, count=1)
-        return normalized in paths
+        candidates.append(posixpath.normpath(posixpath.join(source_dir, target)))
+    for candidate in candidates:
+        if candidate in paths:
+            return True
+        if candidate.endswith(".md") and candidate[:-3] in paths:
+            return True
     return False
+
+
+def validate_date(value: Any) -> bool:
+    if isinstance(value, dt.date):
+        return True
+    if not isinstance(value, str) or not DATE_RE.match(value):
+        return False
+    try:
+        dt.date.fromisoformat(value)
+    except ValueError:
+        return False
+    return True
+
+
+def validate_enum(name: str, value: Any, allowed: set[str]) -> list[str]:
+    if not has_value(value):
+        return []
+    values = as_list(value) if name == "career_use" else [value]
+    bad = [str(v) for v in values if str(v) not in allowed]
+    return bad
 
 
 def section(title: str, items: list[str]) -> str:
@@ -180,6 +243,33 @@ def load_manifest_paths(root: Path) -> set[str]:
     return paths
 
 
+def is_ignored_path(path: Path, root: Path) -> bool:
+    parts = set(path.relative_to(root).parts)
+    return bool({".git", ".smart-env", ".obsidian", ".cache", ".llm-wiki"} & parts)
+
+
+def should_check_frontmatter(path: Path, root: Path) -> bool:
+    relative = path.relative_to(root).parts
+    if not relative:
+        return False
+    if relative[0] == "wiki" and "lint-reports" not in relative and "migrated-from-wiki-tax-root" not in relative:
+        return True
+    if relative[0] == "outputs":
+        return True
+    return False
+
+
+def should_check_links(path: Path, root: Path) -> bool:
+    relative = path.relative_to(root).parts
+    if not relative:
+        return False
+    if relative[0] in {"archive", "templates"}:
+        return False
+    if path.name in {"CODEX.md"}:
+        return False
+    return "lint-reports" not in relative
+
+
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--root", default=".")
@@ -194,55 +284,83 @@ def main() -> int:
     markdown_files = [
         p
         for p in root.rglob("*.md")
-        if ".git" not in p.parts and "raw" not in p.relative_to(root).parts
+        if not is_ignored_path(p, root) and "raw" not in p.relative_to(root).parts
     ]
     linkable_files = [
         p
         for p in root.rglob("*")
-        if p.is_file()
-        and ".git" not in p.parts
-        and ".smart-env" not in p.parts
-        and ".obsidian" not in p.parts
+        if p.is_file() and not is_ignored_path(p, root)
     ]
-    wiki_files = [p for p in wiki_dir.rglob("*.md")]
-    content_wiki_files = [
-        p
-        for p in wiki_files
-        if "lint-reports" not in p.relative_to(root).parts
-        and "migrated-from-wiki-tax-root" not in p.relative_to(root).parts
-    ]
+    frontmatter_files = [p for p in markdown_files if should_check_frontmatter(p, root)]
     link_markdown_files = [
         p for p in markdown_files if "lint-reports" not in p.relative_to(root).parts
     ]
     paths, stems = build_page_index(linkable_files, root)
 
-    missing_frontmatter: list[str] = []
+    frontmatter_errors: list[str] = []
     missing_fields: list[str] = []
+    enum_errors: list[str] = []
+    date_errors: list[str] = []
+    summary_errors: list[str] = []
     missing_sources: list[str] = []
     missing_related: list[str] = []
+    source_link_errors: list[str] = []
+    dead_links: list[str] = []
     seed_pages: list[str] = []
     missing_quick_view: list[str] = []
-    dead_links: list[str] = []
 
-    for path in content_wiki_files:
+    for path in frontmatter_files:
         text = read_text(path)
-        fm = frontmatter(text)
         name = rel(path, root)
+        fm, error = parse_frontmatter(text)
         if fm is None:
-            missing_frontmatter.append(name)
-        else:
-            for field in required_fields_for(fm):
-                if field not in fm:
-                    missing_fields.append(f"{name} 缺少 `{field}`")
-            if should_require_sources(fm) and fm.get("sources", "") in {"", "[]"}:
-                missing_sources.append(name)
-            if should_require_related(fm) and fm.get("related", "") in {"", "[]"}:
-                missing_related.append(name)
-            if fm.get("status") == "seed":
-                seed_pages.append(name)
-            if fm.get("type") in FORMAL_TYPES and "\n## 速览" not in text:
-                missing_quick_view.append(name)
+            frontmatter_errors.append(f"{name}: {error}")
+            continue
 
+        for field in required_fields_for(fm):
+            if field not in fm:
+                missing_fields.append(f"{name} 缺少 `{field}`")
+            elif field in {"sources", "related"}:
+                continue
+            elif not has_value(fm.get(field)):
+                missing_fields.append(f"{name} 缺少 `{field}`")
+
+        for field, allowed in [
+            ("status", ALLOWED_STATUS),
+            ("field", ALLOWED_FIELDS),
+            ("confidence", ALLOWED_CONFIDENCE),
+            ("source_quality", ALLOWED_SOURCE_QUALITY),
+            ("career_use", ALLOWED_CAREER_USE),
+        ]:
+            for bad in validate_enum(field, fm.get(field), allowed):
+                enum_errors.append(f"{name} `{field}` 非法值：{bad}")
+
+        for field in ("created", "updated"):
+            if has_value(fm.get(field)) and not validate_date(fm.get(field)):
+                date_errors.append(f"{name} `{field}` 日期格式应为 YYYY-MM-DD")
+
+        summary = fm.get("summary")
+        if isinstance(summary, str) and len(summary) > SUMMARY_MAX_CHARS:
+            summary_errors.append(f"{name} `summary` 过长：{len(summary)} > {SUMMARY_MAX_CHARS}")
+
+        if should_require_sources(fm) and not has_value(fm.get("sources")):
+            missing_sources.append(name)
+        if should_require_related(fm) and not has_value(fm.get("related")):
+            missing_related.append(name)
+        if str(fm.get("status", "")) == "seed":
+            seed_pages.append(name)
+        if str(fm.get("type", "")) in FORMAL_TYPES and "\n## 速览" not in text:
+            missing_quick_view.append(name)
+
+        for item in as_list(fm.get("sources")):
+            for match in WIKILINK_RE.findall(str(item)):
+                target = link_target(match)
+                if not resolves_link(target, path, root, paths, stems):
+                    source_link_errors.append(f"{name} sources -> [[{match}]]")
+
+    for path in [p for p in link_markdown_files if should_check_links(p, root)]:
+        text = read_text(path)
+        name = rel(path, root)
         for match in WIKILINK_RE.findall(text):
             target = link_target(match)
             if not resolves_link(target, path, root, paths, stems):
@@ -253,7 +371,7 @@ def main() -> int:
         for p in (root / "raw").rglob("*")
         if p.is_file() and p.name != ".gitkeep"
     ]
-    all_wiki_text = "\n".join(read_text(p) for p in content_wiki_files)
+    all_wiki_text = "\n".join(read_text(p) for p in frontmatter_files if p.exists())
     manifest_paths = load_manifest_paths(root)
     unreferenced_raw = [
         rel(p, root)
@@ -265,19 +383,23 @@ def main() -> int:
     output_traceability: list[str] = []
     for path in (root / "outputs").rglob("*.md"):
         text = read_text(path)
-        fm = frontmatter(text)
-        if fm is None or fm.get("related", "") in {"", "[]"} or fm.get("sources", "") in {"", "[]"}:
+        fm, _ = parse_frontmatter(text)
+        if fm is None or not has_value(fm.get("related")) or not has_value(fm.get("sources")):
             output_traceability.append(rel(path, root))
 
     summary = [
-        f"Wiki Markdown 文件数：{len(wiki_files)}",
+        f"参与 frontmatter 检查的 Markdown 文件数：{len(frontmatter_files)}",
         f"参与链接检查的 Markdown 文件数：{len(link_markdown_files)}",
-        f"缺失 frontmatter：{len(missing_frontmatter)}",
-        f"缺失必填 frontmatter 字段：{len(missing_fields)}",
-        f"死链数量：{len(dead_links)}",
-        f"`sources` 为空的 wiki 页面：{len(missing_sources)}",
-        f"`related` 为空的 wiki 页面：{len(missing_related)}",
-        f"seed 状态页面：{len(seed_pages)}",
+        f"frontmatter 解析错误：{len(frontmatter_errors)}",
+        f"缺失必填字段：{len(missing_fields)}",
+        f"枚举值错误：{len(enum_errors)}",
+        f"日期格式错误：{len(date_errors)}",
+        f"summary 长度错误：{len(summary_errors)}",
+        f"正文死链：{len(dead_links)}",
+        f"`sources` wikilink 错误：{len(source_link_errors)}",
+        f"`reviewed/mature` 但 sources 为空：{len(missing_sources)}",
+        f"`related` 为空的正式页面：{len(missing_related)}",
+        f"seed 页面：{len(seed_pages)}",
         f"缺失 `## 速览` 的正式页面：{len(missing_quick_view)}",
         f"未被 wiki 正文引用的 raw 文件：{len(unreferenced_raw)}",
         f"输出材料可追溯性问题：{len(output_traceability)}",
@@ -296,19 +418,23 @@ def main() -> int:
             f"# Lint 报告 {args.date}",
             "",
             section("摘要", summary),
-            section("缺失 Frontmatter", missing_frontmatter),
+            section("Frontmatter 解析错误", frontmatter_errors),
             section("缺失必填字段", missing_fields[:200]),
-            section("死链", dead_links[:200]),
-            section("缺失来源字段 sources", missing_sources[:200]),
-            section("缺失相关链接字段 related", missing_related[:200]),
+            section("枚举值错误", enum_errors[:200]),
+            section("日期格式错误", date_errors[:200]),
+            section("Summary 长度错误", summary_errors[:200]),
+            section("正文死链", dead_links[:200]),
+            section("Sources Wikilink 错误", source_link_errors[:200]),
+            section("Reviewed/Mature 缺少 sources", missing_sources[:200]),
+            section("缺失 related", missing_related[:200]),
             section("Seed 页面", seed_pages[:200]),
             section("缺失速览", missing_quick_view[:200]),
             section("Raw 来源可追溯性问题", unreferenced_raw[:200]),
             section("输出材料可追溯性问题", output_traceability[:200]),
             "## 建议修复\n",
-            "- 将本报告作为维护队列；在继续大量新增笔记前，优先修复死链和来源可追溯性问题。",
-            "- 迁移页面在 sources、related、raw 原文指针完成复核前，应保持 `needs-review` 或 `developing` 状态，不要提前标为 `reviewed`。",
-            "- 每次周度 ingest 后重新运行本脚本，并与上一份报告对比指标变化。",
+            "- reviewed/mature 页面必须至少保留一个可解析来源；来源不足时降为 needs-review 或 developing。",
+            "- 迁移页面后同步更新 `wiki/index.md`、领域 `index.md` 和 `indexes/mocs/`。",
+            "- sources 中的 wikilink 应指向 source summary 或 raw 原文，避免只写不可追踪的文字来源。",
             "",
         ]
     )

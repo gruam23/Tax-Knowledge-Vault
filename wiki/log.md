@@ -18,6 +18,13 @@ updated: 2026-06-28
 
 ## 2026-06-28
 
+- Phase 2：将 wiki 主结构从技术分类迁移为领域优先结构，新增 `00-meta/`、`01-china-tax/`、`02-international-tax/`、`03-transfer-pricing/`、`04-us-tax/`、`05-uk-tax/`、`06-eu-vat-gst/`、`07-tax-treaties-and-cases/`、`08-industries/`、`09-tax-tech/`、`10-research-writing/` 和 `sources/index.md`。
+- 迁移优先页面：受益所有人、常设机构、国际税核心框架、BEPS行动计划、独立交易原则、可比性分析、转移定价方法、无形资产及DEMPE原则、集团内服务、金融交易、成本分摊协议、业务重组、转让定价同期资料、相互协商程序与对应调整、预约定价安排、欧盟/中国/英国增值税体系、美国销售税体系、South Dakota v Wayfair。
+- 同步更新根索引、`wiki/index.md` 和 `indexes/mocs/`，将核心入口指向新领域目录；Phase 1 的独立交易原则薄卡保留在 `00-meta/migrated-duplicates/`。
+- 将 `templates/concept-template.md` 升级为研究型知识卡模板，覆盖速览、核心问题、定义、规则来源、判断标准、分析步骤、争议、正反观点、案例、关系、实务用途、面试表达、英文表达、原文摘录、来源和待补充。
+- 扩写 `受益所有人` 与 `常设机构`，补规则来源、判断标准、分析步骤、实务证据、面试表达和待补充；二者因 `sources: []` 保持 `needs-review`。
+- 新增 `outputs/interview/` 下 5 个输出模板页，覆盖独立交易原则、DEMPE、受益所有人、常设机构和 Wayfair 案。
+- 升级 `scripts/vault_lint.py` 为 PyYAML 解析 frontmatter，并校验 status、field、confidence、source_quality、career_use、summary、created/updated、sources wikilink 和 reviewed/mature 来源要求；重新运行 lint，报告所有核心问题为 0。
 - 优化质量门：将 `vault_lint.py` 改为按页面类型检查，支持 YAML 块列表，排除归档迁移快照噪音。
 - 补全 `raw/manifest.json`，记录 OECD TPG 2022 和 EY VAT Guide 2026 的 PDF hash、抽取文本、source summary 和派生页面。
 - 批量规范转让定价、间接税迁移页和实体页 frontmatter，补齐 `field`、`jurisdiction`、`sources`、`related` 等字段。

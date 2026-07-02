@@ -6,6 +6,7 @@
 
 ## 来源入口
 
+- [[../../wiki/06-eu-vat-gst/index]]
 - [[../../wiki/sources/2026-05-07-EY-VAT-Guide-2026]]
 - [[../../raw/assets/pdfs/wiki-tax/ey-gl-vat-guide-03-2026.pdf|EY VAT/GST/Sales Tax Guide 2026 PDF]]
 - [[../../raw/assets/extracted/wiki-tax/ey-vat-guide-EU-chapter|EU chapter]]
@@ -16,18 +17,18 @@
 ## 基础概念
 
 - [[../../wiki/concepts/indirect_tax/增值税(VAT-GST)]]
-- [[../../wiki/concepts/indirect_tax/欧盟增值税体系]]
+- [[../../wiki/06-eu-vat-gst/欧盟增值税体系]]
 - [[../../wiki/concepts/indirect_tax/欧盟增值税术语词典]]
 
 ## 欧洲
 
 - [[../../wiki/concepts/indirect_tax/德国增值税体系]]
 - [[../../wiki/concepts/indirect_tax/法国增值税体系]]
-- [[../../wiki/concepts/indirect_tax/英国增值税体系]]
+- [[../../wiki/05-uk-tax/英国增值税体系]]
 
 ## 亚太
 
-- [[../../wiki/concepts/indirect_tax/中国增值税体系]]
+- [[../../wiki/01-china-tax/中国增值税体系]]
 - [[../../wiki/concepts/indirect_tax/日本消费税体系]]
 - [[../../wiki/concepts/indirect_tax/印度GST体系]]
 - [[../../wiki/concepts/indirect_tax/新加坡GST体系]]
@@ -35,7 +36,7 @@
 
 ## 美洲
 
-- [[../../wiki/concepts/indirect_tax/美国销售税体系]]
+- [[../../wiki/04-us-tax/美国销售税体系]]
 - [[../../wiki/concepts/indirect_tax/加拿大GST-HST体系]]
 
 ## 待补

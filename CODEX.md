@@ -4,7 +4,7 @@
 
 ## 不可变约束
 
-- 不修改 `E:\agent\Knowledge\wiki-tax`。
+- 不修改 `../wiki-tax`。
 - 本库必须保持独立，不与母库共用 `.git`、`.obsidian/plugins` 或缓存。
 - 每次大操作都要记录到 `log.md`。
 - 每次 wiki 层 ingest、query 或 lint 都要记录到 `wiki/log.md`。

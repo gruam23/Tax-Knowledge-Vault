@@ -52,11 +52,11 @@ updated:
 
 ## 枚举值
 
-`type`: concept, rule, policy, case, paper, method, jurisdiction, industry, entity, topic, source, synthesis, question, review, output
+`type`: concept, rule, policy, case, paper, method, jurisdiction, industry, entity, topic, source, synthesis, question, review, output, meta
 
-`field`: china-tax, international-tax, transfer-pricing, indirect-tax, us-tax, uk-tax, eu-vat-gst, tax-treaties, tax-tech, research-writing, career-roadmap
+`field`: china-tax, international-tax, transfer-pricing, indirect-tax, us-tax, uk-tax, eu-vat-gst, tax-treaties, tax-treaties-and-cases, industries, tax-tech, research-writing, career-roadmap, maintenance
 
-`status`: seed, draft, reviewed, mature, needs-review
+`status`: seed, draft, developing, reviewed, mature, needs-review, deprecated
 
 `level`: basic, intermediate, advanced
 
@@ -65,6 +65,33 @@ updated:
 `source_quality`: primary, official, professional, academic, mixed, unknown
 
 `career_use`: interview, memo, research, presentation, portfolio, study
+
+## 可选字段与迁移规则
+
+`aliases`：用于记录中英文别名、缩写和常见译名，便于 Obsidian 搜索和 AI 检索。例如 PE、Permanent Establishment、常设机构。
+
+`tags`：用于轻量主题标记，不替代 `field`。适合记录 `OECD`、`VAT`、`case-law` 等跨领域标签。
+
+`domain`：旧字段，仅用于迁移兼容。新页面不得使用 `domain` 表示领域，统一用 `field`。
+
+`complexity`：旧字段，仅用于迁移兼容。新页面不得使用 `complexity` 表示难度，统一用 `level`。
+
+迁移旧页面时：
+
+- 如果同时存在 `domain` 和 `field`，以 `field` 为准。
+- 如果同时存在 `complexity` 和 `level`，以 `level` 为准。
+- 迁移后可暂留旧字段作为兼容信息，但不得依赖旧字段做索引。
+- 新建页面必须只使用 `field` 和 `level`。
+
+## 状态规则
+
+- `seed`：占位或刚建立的薄卡。
+- `draft`：已有基本内容，但结构和来源仍不稳定。
+- `developing`：正在扩写或迁移，允许保留待补来源。
+- `needs-review`：来源不足、需要复核或不得作为确定结论使用。
+- `reviewed`：已经按来源核对，至少有一个有效来源。
+- `mature`：可复用于输出、培训或作品集，至少有一个有效来源。
+- `deprecated`：被新页面替代或不再推荐使用，应指向替代页面。
 
 ## 别名词表
 

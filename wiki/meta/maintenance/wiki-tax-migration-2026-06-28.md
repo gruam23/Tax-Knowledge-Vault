@@ -9,7 +9,7 @@ level: basic
 confidence: high
 source_quality: primary
 career_use: [study]
-sources: [E:\agent\Knowledge\wiki-tax]
+sources: [../wiki-tax]
 related: []
 created: 2026-06-28
 updated: 2026-06-28
@@ -18,7 +18,7 @@ updated: 2026-06-28
 
 ## 范围
 
-将母库 `E:\agent\Knowledge\wiki-tax` 的内容迁移到独立派生库 `E:\agent\Knowledge\Tax-Knowledge-Vault`。
+将母库 `../wiki-tax` 的内容迁移到独立派生库 `本仓库根目录`。
 
 ## 路径映射
 

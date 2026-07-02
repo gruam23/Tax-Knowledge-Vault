@@ -52,8 +52,8 @@ updated: 2026-06-28
 检查项：
 
 - 自动任务 ID、名称、频率是否仍符合当前工作流。
-- 自动任务 prompt 是否仍引用正确路径：`E:\agent\Knowledge\Tax-Knowledge-Vault`。
-- 自动任务 prompt 是否明确禁止修改母库 `E:\agent\Knowledge\wiki-tax`。
+- 自动任务 prompt 是否仍引用正确路径：`本仓库根目录`。
+- 自动任务 prompt 是否明确禁止修改母库 `../wiki-tax`。
 - 自动任务是否覆盖当前质量规则：`summary`、`## 速览`、sources、related、MOC、raw 原文指针。
 - 自动任务是否会读取 `CODEX.md`、`schema.md`、`wiki/hot.md`、`wiki/index.md` 和本维护手册。
 - 如果新增目录、脚本、MOC、核心 source 或输出流程，应同步更新自动任务 prompt。

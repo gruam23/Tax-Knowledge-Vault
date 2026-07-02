@@ -9,3 +9,14 @@ raw/assets/pdfs/**/*.pdf
 .trash/
 .DS_Store
 Thumbs.db
+.env
+local.config.json
+*.local.md
+.llm-wiki/
+.cache/
+*.sqlite
+*.db
+private/
+confidential/
+client-data/
+raw/private/

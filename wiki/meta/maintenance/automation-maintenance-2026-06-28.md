@@ -35,7 +35,7 @@ updated: 2026-06-28
 ## 维护要求
 
 - prompt 必须是中文。
-- prompt 必须指向新主力库 `E:\agent\Knowledge\Tax-Knowledge-Vault`。
-- prompt 必须禁止修改母库 `E:\agent\Knowledge\wiki-tax`。
+- prompt 必须指向新主力库 `本仓库根目录`。
+- prompt 必须禁止修改母库 `../wiki-tax`。
 - prompt 必须随 `CODEX.md`、`schema.md`、`MAINTENANCE.md` 和核心索引变化而更新。
 - 自动任务变更必须写入维护记录。
