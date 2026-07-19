@@ -16,6 +16,14 @@ updated: 2026-07-19
 ---
 # Wiki 日志
 
+## 2026-07-19 — Phase 3 最终小型修正
+
+- `rebuild_overview.py` 改为解析 frontmatter，并生成正式页面、Knowledge、Jurisdiction、Case、source summary、outputs 和状态统计。
+- 自动脚本只更新 `wiki/overview.md` 的标记区，重复运行无额外 diff；无 frontmatter 文件跳过，YAML 错误给 warning。
+- 研发费用加计扣除页改为关联正式 CN 法域索引，并以中文 Stage 1 待核验说明替代旧 Phase 1 英文占位文本。
+- 官方来源缺口、空 `last_verified`、`needs-review / low / unknown / sources: []` 均继续保留。
+- 治理分支 strict lint 和 manifest check 通过，准备合并到 `main`。
+
 ## 2026-07-19 — Phase 3 收尾清理
 
 - 清除“独立交易原则”重复标题：正式知识页不变，Phase 1 占位页改为 deprecated 最小跳转页。

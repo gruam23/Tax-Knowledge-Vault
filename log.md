@@ -1,5 +1,12 @@
 # Vault Log
 
+## 2026-07-19 — Phase 3 最终小型修正
+
+- 增强 `rebuild_overview.py`：使用 PyYAML 统计正式页面、五类内容与四类成熟度状态，并仅更新 overview 自动生成区块。
+- 清理研发费用加计扣除页的旧 MOC 关系和 Phase 1 英文来源占位说明，改为正式 CN 领域索引与 Stage 1 待核验说明。
+- 继续保留该页的官方来源缺口、空 `last_verified` 和 `needs-review` 状态，未补写未经核验的政策结论。
+- 治理分支本地四项验收通过，overview 重复运行结果稳定；准备合并到 `main`。
+
 ## 2026-07-19 — Phase 3 收尾清理
 
 - 将 Phase 1 “独立交易原则”重复页缩减为 deprecated 跳转页，正式页面与标题保持不变。
