@@ -1,5 +1,12 @@
 # Vault Log
 
+## 2026-07-19 — 新旧目录混合清理
+
+- 按本地真实文件系统审计 tracked、untracked、ignored、隐藏、零字节和特殊文件；Phase 1/2 旧目录中没有需要迁移的真实内容。
+- 删除 69 个经核验的空目录和 67 个 tracked `.gitkeep`；另移除 1 个 local-only raw 占位 `.gitkeep`，未删除任何原文、PDF、提取文本、客户资料或个人资料。
+- 修正现行 Dataview、README 和维护手册中的旧路径；历史日志、审计和迁移记录保持原样。
+- Phase 3 五区结构不变，本次不是 Phase 4 重构。
+
 ## 2026-07-19 — GitHub 完整安全快照
 
 - 为 67 个可公开空目录加入 `.gitkeep`，使知识库框架能够由 Git 完整还原。

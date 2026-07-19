@@ -10,8 +10,8 @@ status: reviewed
 
 ## 摘要
 
-- 参与 frontmatter 检查的 Markdown 文件数：78
-- 参与链接检查的 Markdown 文件数：140
+- 参与 frontmatter 检查的 Markdown 文件数：79
+- 参与链接检查的 Markdown 文件数：141
 - frontmatter 解析错误：0
 - 缺失必填字段：0
 - 枚举值错误：0

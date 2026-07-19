@@ -22,6 +22,8 @@ Phase 3 领域优先结构已收口。主入口使用 `wiki/hot.md`、`wiki/over
 
 本轮已清理 Phase 1 重复占位页，统一 `jurisdictions` 枚举，并确认正式主导航由 `knowledge/`、`jurisdictions/`、`cases/`、`sources/` 和 `_ops/` 各目录的 `index.md` 承担；`indexes/mocs/` 仅作 deprecated 兼容层。
 
+本地真实目录审计已进一步清除 Phase 1/2 的空目录、说明文字目录和结构暴露用 `.gitkeep`；未发现需要迁移的真实文件，local-only raw 原文、PDF 与提取文本均原样保留。本次仅收口旧空壳，不改变 Phase 3 架构。
+
 ## 高优先级下一步
 
 - 优先为 [[knowledge/international-tax/受益所有人]]、[[knowledge/international-tax/常设机构]]、[[cases/domestic-cases/South Dakota v Wayfair]] 补权威 source。
