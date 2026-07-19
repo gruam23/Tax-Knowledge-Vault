@@ -2,6 +2,7 @@
 
 ```dataview
 TABLE field, status, confidence, sources
-FROM "wiki/papers"
+FROM "wiki"
+WHERE type = "paper"
 SORT updated DESC
 ```

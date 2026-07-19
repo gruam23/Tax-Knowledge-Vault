@@ -42,7 +42,6 @@ python scripts/manifest_check.py --root .
 - `templates/`：各类页面模板。
 - `indexes/dataview/`：按 `type`、`status`、`field`、`jurisdictions` 和 `career_use` 提供横向动态查询。
 - `indexes/mocs/`：旧 MOC 兼容页，已停止作为主导航维护。
-- `domains/`：如仍保留，仅作为旧学习路线或兼容资料，不是知识库主导航。
 
 ## 领域入口
 
@@ -101,4 +100,4 @@ wiki/_ops/lint-reports/lint-report-YYYY-MM-DD.md
 
 ## 当前状态
 
-本库已经作为相邻只读母库 `../wiki-tax` 的独立派生库初始化完成。当前主力库为本仓库根目录。
+本库已经作为相邻只读母库 `../wiki-tax` 的独立派生库初始化完成。当前主力库为本仓库根目录。Phase 1/2 的旧编号目录、技术分类空壳和说明文字目录已经本地审计并清除；Phase 3 五区结构保持不变。

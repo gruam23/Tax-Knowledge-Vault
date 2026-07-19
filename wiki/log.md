@@ -16,6 +16,13 @@ updated: 2026-07-19
 ---
 # Wiki 日志
 
+## 2026-07-19 — 新旧目录混合清理
+
+- 清理前直接审计本地 118 个目录和 245 个文件，并区分 201 个 tracked、0 个 untracked 与 44 个 ignored 文件。
+- 旧编号目录、技术分类空壳和说明文字目录均无真实内容；删除 69 个空目录，真实文件迁移 0、重复页合并 0、待人工判断 0。
+- 移除 67 个结构暴露用 tracked `.gitkeep` 和 1 个 ignored 占位 `.gitkeep`，local-only raw 资料原样保留。
+- 正式结构继续使用 `knowledge/`、`jurisdictions/`、`cases/`、`sources/` 和 `_ops/`，Phase 3 设计未改变。
+
 ## 2026-07-19 — GitHub 完整安全快照
 
 - 为 attachments、domains、inbox、indexes、outputs、raw source 分类、templates 和 legacy wiki 框架中的 67 个空目录加入 `.gitkeep`。

@@ -45,8 +45,8 @@ wiki 层负责把原始税务资料整理成结构化、可追溯的知识笔记
 
 ## 当前成熟度
 
-- 参与 lint frontmatter 检查的页面：78。
-- `reviewed`：42。
+- 参与 lint frontmatter 检查的页面：79。
+- `reviewed`：43。
 - `mature`：0。
 - `needs-review`：5。
 - `deprecated`：1（Phase 1 旧占位跳转页）。
@@ -68,7 +68,7 @@ wiki 层负责把原始税务资料整理成结构化、可追溯的知识笔记
 - Case 页面：2
 - Source summary：5
 - Outputs：6
-- Reviewed：42
+- Reviewed：43
 - Mature：0
 - Needs review：5
 - Deprecated：1
