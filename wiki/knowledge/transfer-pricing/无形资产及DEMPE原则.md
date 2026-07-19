@@ -3,8 +3,8 @@ type: concept
 title: "无形资产及DEMPE原则 (Intangibles and DEMPE Functions)"
 summary: "BEPS后无形资产收益分配核心框架，法定所有权≠全部回报，按DEMPE五大功能贡献分配利润"
 created: 2026-04-28
-updated: 2026-04-28
-status: developing
+updated: 2026-07-19
+status: reviewed
 complexity: advanced
 domain: 国际税收
 aliases:
@@ -19,6 +19,12 @@ related: ["[[2026-04-28-OECD-TPG-2022]]", "[[转让定价 MOC]]"]
 sources: ["[[wiki/sources/2026-04-28-OECD-TPG-2022]]"]
 field: transfer-pricing
 jurisdiction: global
+jurisdictions: [OECD]
+authority_type: administrative-guidance
+binding_status: nonbinding
+legal_status: current
+last_verified: 2026-07-19
+citation_locator: "OECD TPG Chapter VI"
 level: advanced
 confidence: high
 source_quality: primary
