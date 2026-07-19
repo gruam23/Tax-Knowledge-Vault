@@ -80,6 +80,9 @@ ALLOWED_FIELDS = {
 ALLOWED_CONFIDENCE = {"low", "medium", "high"}
 ALLOWED_SOURCE_QUALITY = {"primary", "official", "professional", "academic", "mixed", "unknown"}
 ALLOWED_CAREER_USE = {"interview", "memo", "research", "presentation", "portfolio", "study"}
+ALLOWED_AUTHORITY_TYPE = {"treaty", "statute", "regulation", "notice", "administrative-guidance", "case", "professional", "academic", "internal-analysis"}
+ALLOWED_BINDING_STATUS = {"binding", "persuasive", "nonbinding", "unknown"}
+ALLOWED_LEGAL_STATUS = {"current", "amended", "repealed", "draft", "historical", "unknown"}
 SUMMARY_MAX_CHARS = 80
 DATE_RE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
 WIKILINK_RE = re.compile(r"\[\[([^\]]+)\]\]")
@@ -309,6 +312,10 @@ def main() -> int:
     dead_links: list[str] = []
     seed_pages: list[str] = []
     missing_quick_view: list[str] = []
+    semantic_warnings: list[str] = []
+    source_structure_warnings: list[str] = []
+    stale_law_warnings: list[str] = []
+    titles: dict[str, list[str]] = {}
 
     for path in frontmatter_files:
         text = read_text(path)
@@ -317,6 +324,8 @@ def main() -> int:
         if fm is None:
             frontmatter_errors.append(f"{name}: {error}")
             continue
+        if has_value(fm.get("title")):
+            titles.setdefault(str(fm["title"]).strip(), []).append(name)
 
         for field in required_fields_for(fm):
             if field not in fm:
@@ -332,6 +341,9 @@ def main() -> int:
             ("confidence", ALLOWED_CONFIDENCE),
             ("source_quality", ALLOWED_SOURCE_QUALITY),
             ("career_use", ALLOWED_CAREER_USE),
+            ("authority_type", ALLOWED_AUTHORITY_TYPE),
+            ("binding_status", ALLOWED_BINDING_STATUS),
+            ("legal_status", ALLOWED_LEGAL_STATUS),
         ]:
             for bad in validate_enum(field, fm.get(field), allowed):
                 enum_errors.append(f"{name} `{field}` 非法值：{bad}")
@@ -339,6 +351,24 @@ def main() -> int:
         for field in ("created", "updated"):
             if has_value(fm.get(field)) and not validate_date(fm.get(field)):
                 date_errors.append(f"{name} `{field}` 日期格式应为 YYYY-MM-DD")
+        if has_value(fm.get("jurisdiction")) and not has_value(fm.get("jurisdictions")):
+            semantic_warnings.append(f"{name} 仍使用 legacy `jurisdiction`，编辑时迁移至 `jurisdictions`")
+        if str(fm.get("type")) == "source":
+            required_sections = ["资料定位", "基本信息", "权威等级", "资料结构", "核心贡献", "已生成页面", "待继续整理", "Raw 原文位置"]
+            missing_sections = [s for s in required_sections if f"## {s}" not in text]
+            if missing_sections:
+                source_structure_warnings.append(f"{name} 缺少 source 章节：{', '.join(missing_sections)}")
+        if str(fm.get("type")) in {"rule", "policy", "case", "jurisdiction"}:
+            if not has_value(fm.get("jurisdictions")):
+                stale_law_warnings.append(f"{name} 缺少 `jurisdictions`")
+            if not has_value(fm.get("last_verified")):
+                stale_law_warnings.append(f"{name} 缺少 `last_verified`")
+            if str(fm.get("status")) in {"reviewed", "mature"} and has_value(fm.get("last_verified")):
+                try:
+                    if (dt.date.today() - dt.date.fromisoformat(str(fm["last_verified"]))).days > 180:
+                        stale_law_warnings.append(f"{name} 已超过 180 天未核验")
+                except ValueError:
+                    stale_law_warnings.append(f"{name} `last_verified` 日期无效")
 
         summary = fm.get("summary")
         if isinstance(summary, str) and len(summary) > SUMMARY_MAX_CHARS:
@@ -388,6 +418,8 @@ def main() -> int:
         if fm is None or not has_value(fm.get("related")) or not has_value(fm.get("sources")):
             output_traceability.append(rel(path, root))
 
+    duplicate_titles = [f"title 重复：{title} -> {', '.join(paths)}" for title, paths in titles.items() if title and len(paths) > 1]
+
     summary = [
         f"参与 frontmatter 检查的 Markdown 文件数：{len(frontmatter_files)}",
         f"参与链接检查的 Markdown 文件数：{len(link_markdown_files)}",
@@ -404,6 +436,9 @@ def main() -> int:
         f"缺失 `## 速览` 的正式页面：{len(missing_quick_view)}",
         f"未被 wiki 正文引用的 raw 文件：{len(unreferenced_raw)}",
         f"输出材料可追溯性问题：{len(output_traceability)}",
+        f"语义迁移/重复警告：{len(semantic_warnings) + len(duplicate_titles)}",
+        f"source 结构警告：{len(source_structure_warnings)}",
+        f"税法时效警告：{len(stale_law_warnings)}",
     ]
 
     report = "\n".join(
@@ -432,6 +467,9 @@ def main() -> int:
             section("缺失速览", missing_quick_view[:200]),
             section("Raw 来源可追溯性问题", unreferenced_raw[:200]),
             section("输出材料可追溯性问题", output_traceability[:200]),
+            section("语义迁移与重复主题警告", (semantic_warnings + duplicate_titles)[:200]),
+            section("Source 页面完整性警告", source_structure_warnings[:200]),
+            section("税法时效警告", stale_law_warnings[:200]),
             "## 建议修复\n",
             "- reviewed/mature 页面必须至少保留一个可解析来源；来源不足时降为 needs-review 或 developing。",
             "- 迁移页面后同步更新 `wiki/index.md`、领域 `index.md` 和 `indexes/mocs/`。",
