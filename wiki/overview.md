@@ -36,5 +36,5 @@ wiki 层负责把原始税务资料整理成结构化、可追溯的知识笔记
 
 
 <!-- AUTO-GENERATED:BEGIN -->
-当前知识页：74。请优先补齐 needs-review 页面对应的权威 source summary，并以最近 lint 报告为准。
+当前知识页：78。请优先补齐 needs-review 页面对应的权威 source summary，并以最近 lint 报告为准。
 <!-- AUTO-GENERATED:END -->
