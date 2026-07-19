@@ -4,15 +4,16 @@ type: output
 summary: 面试中解释无形资产 DEMPE 分析的回答模板
 field: transfer-pricing
 jurisdiction: global
-status: developing
+jurisdictions: [OECD]
+status: reviewed
 level: advanced
-confidence: medium
-source_quality: mixed
+confidence: high
+source_quality: primary
 career_use: [interview]
 sources: ["[[wiki/knowledge/transfer-pricing/无形资产及DEMPE原则]]", "[[wiki/sources/2026-04-28-OECD-TPG-2022]]"]
 related: ["[[wiki/knowledge/transfer-pricing/独立交易原则]]", "[[wiki/knowledge/transfer-pricing/可比性分析]]"]
 created: 2026-06-28
-updated: 2026-07-02
+updated: 2026-07-19
 ---
 # 如何解释DEMPE分析
 

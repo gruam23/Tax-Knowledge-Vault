@@ -4,21 +4,22 @@ type: output
 summary: 面试中解释 Wayfair 案和美国销售税经济联系规则
 field: us-tax
 jurisdiction: US
-status: developing
+jurisdictions: [US]
+status: reviewed
 level: intermediate
-confidence: medium
-source_quality: mixed
+confidence: high
+source_quality: primary
 career_use: [interview]
-sources: ["[[wiki/cases/domestic-cases/South Dakota v Wayfair]]", "[[wiki/jurisdictions/US/美国销售税体系]]"]
+sources: ["[[wiki/cases/domestic-cases/South Dakota v Wayfair]]", "[[wiki/jurisdictions/US/美国销售税体系]]", "[[wiki/sources/2018-06-21-South-Dakota-v-Wayfair]]"]
 related: ["[[wiki/jurisdictions/US/index]]"]
 created: 2026-06-28
-updated: 2026-07-02
+updated: 2026-07-19
 ---
 # 如何解释Wayfair案
 
 ## 速览
 
-Wayfair 案说明美国州销售税 nexus 从传统 physical presence 门槛，转向允许州基于 economic nexus 要求远程卖家承担销售税义务。判决原文尚未入库，回答需标注来源待补。
+Wayfair 案说明美国州销售税 nexus 从传统 physical presence 门槛，转向允许州基于 economic nexus 要求远程卖家承担销售税义务；具体州门槛仍需回到州法核对。
 
 ## 30 秒版
 
