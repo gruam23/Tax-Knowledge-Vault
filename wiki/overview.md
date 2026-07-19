@@ -62,5 +62,14 @@ wiki 层负责把原始税务资料整理成结构化、可追溯的知识笔记
 
 
 <!-- AUTO-GENERATED:BEGIN -->
-当前知识页：78。请优先补齐 needs-review 页面对应的权威 source summary，并以最近 lint 报告为准。
+- 正式知识与法域案例页面：47
+- Knowledge 页面：27
+- Jurisdiction 页面：18
+- Case 页面：2
+- Source summary：5
+- Outputs：6
+- Reviewed：42
+- Mature：0
+- Needs review：5
+- Deprecated：1
 <!-- AUTO-GENERATED:END -->
