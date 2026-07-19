@@ -1,28 +1,43 @@
+# Obsidian runtime
 .obsidian/workspace*
-.obsidian/cache
+.obsidian/cache/
 .obsidian/plugins/
+
+# AI runtime
 .smart-env/
 .claude/
 .claudian/
-Excalidraw/
-raw/assets/pdfs/**/*.pdf
-.trash/
-.DS_Store
-Thumbs.db
-.env
-local.config.json
-*.local.md
 .llm-wiki/
 .cache/
+Excalidraw/
+
+# Local config and secrets
+.env
+.env.*
+local.config.json
+*.local.md
+*.key
+*.pem
+
+# Databases
 *.sqlite
 *.db
+*.lancedb/
+
+# Private materials
 private/
 confidential/
 client-data/
 raw/private/
+raw/local/
+raw/assets/extracted/
 
+# Large source files
+raw/assets/pdfs/**/*.pdf
+*.epub
+*.mobi
 
-
-
-# Ignore Smart Environment folder
-.smart-env
+# OS
+.trash/
+.DS_Store
+Thumbs.db

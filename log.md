@@ -1,5 +1,12 @@
 # Vault Log
 
+## 2026-07-19
+
+- Phase 3 P0：完成公开仓库风险审计，新增 raw local-only 政策与风险审查报告。
+- 停止追踪 `raw/assets/extracted/` 的完整 OECD/EY 提取文本；本地文件保留，Git 历史未改写。
+- 更新 manifest 的 local-only、许可状态、公开摘要与最后核验字段，删除重复派生页。
+- 运行 lint 和 manifest 路径/重复检查；后者通过，lint 报告作为后续 P1–P3 的修复基线。
+
 ## 2026-07-02
 
 - 统一 meta 入口策略：保留 `wiki/hot.md`、`wiki/overview.md`、`wiki/log.md`、`wiki/meta/maintenance/`、`wiki/meta/lint-reports/` 为主入口，`wiki/00-meta/index.md` 改为兼容页。

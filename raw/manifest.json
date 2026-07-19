@@ -1,17 +1,21 @@
 {
   "vault": "Tax Knowledge Vault",
-  "phase": "2",
-  "schema_version": 2,
-  "source_policy": "raw files are source-of-truth; formal wiki notes should cite sources",
+  "phase": "3",
+  "schema_version": 3,
+  "source_policy": "raw originals are local-only by default; public source summaries and hashes are the published evidence index",
   "parent_vault": "../wiki-tax",
   "parent_vault_mode": "read-only",
-  "updated": "2026-06-28",
+  "updated": "2026-07-19",
   "sources": {
     "oecd-tpg-2022": {
       "title": "OECD Transfer Pricing Guidelines 2022",
       "source_type": "guidance",
       "source_quality": "primary",
       "raw_path": "raw/assets/pdfs/wiki-tax/2022-OECD TRANSFER PRICING GUIDELINES 2022.pdf",
+      "local_only": true,
+      "public_summary_available": true,
+      "license_status": "copyrighted-local-reference",
+      "last_verified": "2026-07-19",
       "sha256": "FF5C27DD05D184B6C6D117585838FC05837271D61B0A137A3DCA9A9DCD3766F5",
       "alternate_raw_paths": [
         {
@@ -27,12 +31,12 @@
         "raw/assets/extracted/wiki-tax/2022-OECD-TPG-extracted-241-330.md",
         "raw/assets/extracted/wiki-tax/2022-OECD-TPG-extracted-331-800.md"
       ],
+      "extracted_files_local_only": true,
       "source_summary": "wiki/sources/2026-04-28-OECD-TPG-2022.md",
       "derived_pages": [
         "wiki/entities/OECD.md",
         "wiki/02-international-tax/BEPS行动计划.md",
         "wiki/03-transfer-pricing/无形资产定价.md",
-        "wiki/03-transfer-pricing/独立交易原则.md",
         "wiki/03-transfer-pricing/预约定价安排.md",
         "wiki/03-transfer-pricing/业务重组.md",
         "wiki/03-transfer-pricing/全球公式分配法.md",
@@ -48,13 +52,17 @@
         "wiki/03-transfer-pricing/集团内服务.md"
       ],
       "status": "migrated",
-      "last_ingested": "2026-06-28"
+      "last_ingested": "2026-07-19"
     },
     "ey-vat-guide-2026": {
       "title": "EY Worldwide VAT, GST and Sales Tax Guide 2026",
       "source_type": "professional-guide",
       "source_quality": "professional",
       "raw_path": "raw/assets/pdfs/wiki-tax/ey-gl-vat-guide-03-2026.pdf",
+      "local_only": true,
+      "public_summary_available": true,
+      "license_status": "copyrighted-local-reference",
+      "last_verified": "2026-07-19",
       "sha256": "15440B0EFAA544964CA4C5A8F9C6D9AA22269A3CB81D3900060CA2F2ECAF8D74",
       "extracted_files": [
         "raw/assets/extracted/wiki-tax/ey-vat-guide-extracted-1-100.md",
@@ -93,6 +101,7 @@
         "raw/assets/extracted/wiki-tax/ey-vat-guide-United-Kingdom.md",
         "raw/assets/extracted/wiki-tax/ey-vat-guide-United-States.md"
       ],
+      "extracted_files_local_only": true,
       "source_summary": "wiki/sources/2026-05-07-EY-VAT-Guide-2026.md",
       "derived_pages": [
         "wiki/entities/EY.md",
@@ -111,7 +120,7 @@
         "wiki/01-china-tax/中国增值税体系.md"
       ],
       "status": "migrated",
-      "last_ingested": "2026-06-28"
+      "last_ingested": "2026-07-19"
     }
   }
 }

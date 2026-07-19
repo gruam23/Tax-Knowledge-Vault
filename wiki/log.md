@@ -12,9 +12,15 @@ career_use: [study]
 sources: [CODEX.md]
 related: [税务知识库 Review 2026-06-28]
 created: 2026-06-28
-updated: 2026-07-02
+updated: 2026-07-19
 ---
 # Wiki 日志
+
+## 2026-07-19
+
+- Phase 3 P0：生成公开仓库风险审查和基线审计；完整原文与提取文本改为 local-only。
+- 更新 OECD TPG、EY VAT Guide source summary 的公开定位和 local-only 说明，修复 OECD 提取范围描述与 manifest 的矛盾。
+- 运行 lint，报告位于 `wiki/meta/lint-reports/lint-report-2026-07-19.md`；结构性问题留待 P1–P3 一并治理。
 
 ## 2026-07-02
 
