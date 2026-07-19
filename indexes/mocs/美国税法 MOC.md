@@ -1,14 +1,12 @@
-# 美国税法 MOC
+---
+title: "美国税法 MOC（已弃用）"
+type: meta
+summary: "兼容入口；正式美国法域 MOC 已迁移"
+status: deprecated
+created: 2026-06-28
+updated: 2026-07-19
+---
 
-## 核心主题
+# 已迁移
 
-- [[../../wiki/04-us-tax/index]]
-- [[../../wiki/04-us-tax/美国销售税体系]]
-- [[../../wiki/07-tax-treaties-and-cases/South Dakota v Wayfair]]
-
-## 待建设
-
-- Sales tax nexus
-- Economic nexus
-- Marketplace facilitator rules
-- Federal income tax basics
+请使用 [[../../wiki/jurisdictions/US/index|美国法域 MOC]]。

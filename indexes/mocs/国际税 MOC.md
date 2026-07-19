@@ -1,15 +1,12 @@
-# 国际税 MOC
+---
+title: "国际税 MOC（已弃用）"
+type: meta
+summary: "兼容入口；正式国际税 MOC 已迁至 knowledge"
+status: deprecated
+created: 2026-06-28
+updated: 2026-07-19
+---
 
-## 学习路线
+# 已迁移
 
-- [[../../wiki/02-international-tax/BEPS行动计划]]
-- [[../../wiki/02-international-tax/受益所有人]]
-- [[../../wiki/02-international-tax/常设机构]]
-- [[../../wiki/02-international-tax/国际税核心框架]]
-
-## 待建设
-
-- 税收居民
-- 来源地规则
-- 双重征税消除
-- 反避税规则
+请使用 [[../../wiki/knowledge/international-tax/index|国际税 MOC]]。

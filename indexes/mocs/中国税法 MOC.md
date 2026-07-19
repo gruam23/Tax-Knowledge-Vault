@@ -1,14 +1,12 @@
-# 中国税法 MOC
+---
+title: "中国税法 MOC（已弃用）"
+type: meta
+summary: "兼容入口；正式中国法域 MOC 已迁移"
+status: deprecated
+created: 2026-06-28
+updated: 2026-07-19
+---
 
-## 核心主题
+# 已迁移
 
-- [[../../wiki/01-china-tax/index]]
-- [[../../wiki/01-china-tax/中国增值税体系]]
-- [[../../wiki/01-china-tax/研发费用加计扣除]]
-
-## 待建设
-
-- 企业所得税
-- 增值税
-- 税收优惠
-- 税收征管
+请使用 [[../../wiki/jurisdictions/CN/index|中国法域 MOC]]。

@@ -11,7 +11,7 @@
 - 正式 wiki 页面至少应引用一个 source 页面或 raw 原始资料。证据不足的内容放入 `wiki/reviews/`。
 - 新增或重写正式 wiki 页面时必须使用三层渐进式详略结构：frontmatter `summary`、正文 `## 速览`、正文深度内容。
 - 重要知识点必须能回溯到 source summary 或 raw 原文位置，优先使用可点击 wikilink。
-- 新建正式知识卡必须放入对应领域目录，例如 `wiki/02-international-tax/`、`wiki/03-transfer-pricing/`、`wiki/06-eu-vat-gst/`。
+- 新建正式知识卡必须按新路由放入 `wiki/knowledge/`、`wiki/jurisdictions/` 或 `wiki/cases/` 的对应子目录。
 - `type` 只作为 metadata，用于 Dataview 和 lint，不决定物理目录。
 - 不再默认向 `wiki/concepts/`、`wiki/cases/`、`wiki/policies/` 新建页面；需要按类型查看时使用 `indexes/dataview/全部概念索引.md`、`全部案例索引.md`、`全部政策索引.md` 和 `全部source索引.md`。
 
@@ -65,7 +65,7 @@
 python scripts/vault_lint.py --root .
 ```
 
-报告写入 `wiki/meta/lint-reports/`，重要修复记录到 `wiki/log.md`。
+报告写入 `wiki/_ops/lint-reports/`，重要修复记录到 `wiki/log.md`。
 
 ## 页面命名和引用规则
 

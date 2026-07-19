@@ -1,13 +1,12 @@
-# 行业税务 MOC
+---
+title: "行业税务 MOC（已弃用）"
+type: meta
+summary: "兼容入口；正式行业场景 MOC 已迁移"
+status: deprecated
+created: 2026-06-28
+updated: 2026-07-19
+---
 
-## 领域入口
+# 已迁移
 
-- [[../../wiki/08-industries/index]]
-
-## 待建设
-
-- 半导体
-- 跨境电商
-- 软件和 SaaS
-- 制造业
-- 金融服务
+请使用 [[../../wiki/knowledge/industry-scenarios/index|行业场景]]。

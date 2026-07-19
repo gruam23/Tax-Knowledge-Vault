@@ -1,13 +1,12 @@
-# 研究写作 MOC
+---
+title: "研究写作 MOC（已弃用）"
+type: meta
+summary: "兼容入口；正式研究写作 MOC 已迁移"
+status: deprecated
+created: 2026-06-28
+updated: 2026-07-19
+---
 
-## 领域入口
+# 已迁移
 
-- [[../../wiki/10-research-writing/index]]
-
-## 待建设
-
-- 文献笔记
-- 税务论文结构
-- 实证研究方法
-- 案例分析写法
-- Memo 写作
+请使用 [[../../wiki/knowledge/research-writing/index|研究写作]]。

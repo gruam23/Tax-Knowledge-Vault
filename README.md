@@ -36,16 +36,11 @@ python scripts/vault_lint.py --root .
 
 ## 领域入口
 
-- `wiki/01-china-tax/`
-- `wiki/02-international-tax/`
-- `wiki/03-transfer-pricing/`
-- `wiki/04-us-tax/`
-- `wiki/05-uk-tax/`
-- `wiki/06-eu-vat-gst/`
-- `wiki/07-tax-treaties-and-cases/`
-- `wiki/08-industries/`
-- `wiki/09-tax-tech/`
-- `wiki/10-research-writing/`
+- `wiki/knowledge/`：按国际税、转让定价、间接税、税务科技、研究写作和行业场景浏览。
+- `wiki/jurisdictions/`：按 CN、US、UK、EU 和其他法域浏览。
+- `wiki/cases/`：按案例类型浏览。
+- `wiki/sources/`：按来源类型浏览可公开 source summary。
+- `wiki/_ops/`：维护、复核、摄入与 lint 报告。
 
 ## 工作流
 
@@ -78,7 +73,7 @@ python scripts/vault_lint.py --root .
 脚本会解析 YAML frontmatter，检查枚举值、日期、summary 长度、sources wikilink、reviewed/mature 来源要求和全库死链，并生成：
 
 ```text
-wiki/meta/lint-reports/lint-report-YYYY-MM-DD.md
+wiki/_ops/lint-reports/lint-report-YYYY-MM-DD.md
 ```
 
 ## 隐私与公开仓库注意事项

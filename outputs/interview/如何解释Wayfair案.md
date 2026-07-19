@@ -9,8 +9,8 @@ level: intermediate
 confidence: medium
 source_quality: mixed
 career_use: [interview]
-sources: ["[[wiki/07-tax-treaties-and-cases/South Dakota v Wayfair]]", "[[wiki/04-us-tax/美国销售税体系]]"]
-related: ["[[wiki/04-us-tax/index]]"]
+sources: ["[[wiki/cases/domestic-cases/South Dakota v Wayfair]]", "[[wiki/jurisdictions/US/美国销售税体系]]"]
+related: ["[[wiki/jurisdictions/US/index]]"]
 created: 2026-06-28
 updated: 2026-07-02
 ---
@@ -42,8 +42,8 @@ Wayfair 的实务意义在于改变了跨州和跨境电商的销售税风险。
 
 ## 可引用规则/案例
 
-- [[wiki/07-tax-treaties-and-cases/South Dakota v Wayfair]]。
-- [[wiki/04-us-tax/美国销售税体系]]。
+- [[wiki/cases/domestic-cases/South Dakota v Wayfair]]。
+- [[wiki/jurisdictions/US/美国销售税体系]]。
 - 待补：South Dakota v. Wayfair, Inc. 判决原文。
 - 待补：South Dakota 州 economic nexus 规则。
 
@@ -70,6 +70,6 @@ Wayfair 的实务意义在于改变了跨州和跨境电商的销售税风险。
 
 ## Sources
 
-- [[wiki/07-tax-treaties-and-cases/South Dakota v Wayfair]]
-- [[wiki/04-us-tax/美国销售税体系]]
+- [[wiki/cases/domestic-cases/South Dakota v Wayfair]]
+- [[wiki/jurisdictions/US/美国销售税体系]]
 - 待补：美国最高法院判决原文、南达科他州官方规则、Quill 判决。

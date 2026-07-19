@@ -1,13 +1,12 @@
-# 税务科技 MOC
+---
+title: "税务科技 MOC（已弃用）"
+type: meta
+summary: "兼容入口；正式税务科技 MOC 已迁移"
+status: deprecated
+created: 2026-06-28
+updated: 2026-07-19
+---
 
-## 领域入口
+# 已迁移
 
-- [[../../wiki/09-tax-tech/index]]
-
-## 待建设
-
-- E-invoicing
-- Tax data governance
-- VAT automation
-- Transfer pricing analytics
-- AI for tax research
+请使用 [[../../wiki/knowledge/tax-tech/index|税务科技]]。

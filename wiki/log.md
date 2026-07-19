@@ -16,6 +16,11 @@ updated: 2026-07-19
 ---
 # Wiki 日志
 
+## 2026-07-19 — P1
+
+- 将旧编号领域目录迁入 `knowledge/`、`jurisdictions/` 和 `cases/`，来源机构页归入 `sources/organizations/`，原 `meta/` 归入 `_ops/`。
+- 新建五区索引；旧 `indexes/mocs/` 只保留 deprecated 兼容链接。
+
 ## 2026-07-19
 
 - Phase 3 P0：生成公开仓库风险审查和基线审计；完整原文与提取文本改为 local-only。

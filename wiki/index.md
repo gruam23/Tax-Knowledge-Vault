@@ -1,198 +1,41 @@
 ---
-title: Wiki 索引
+title: "Wiki 索引"
 type: review
-summary: 税务知识库结构化知识总索引
+summary: "税务知识层的领域、法域、案例、来源和运维入口"
 field: maintenance
-jurisdiction:
+jurisdictions: [Global]
 status: reviewed
 level: basic
 confidence: high
 source_quality: primary
 career_use: [study]
-sources: [CODEX.md, schema.md]
-related: [税务知识库 Review 2026-06-28]
+sources: ["[[../CODEX]]", "[[../schema]]"]
+related: ["[[overview]]", "[[hot]]"]
 created: 2026-06-28
-updated: 2026-06-28
+updated: 2026-07-19
 ---
 
 # Wiki 索引
 
-> 税务知识主库 | Phase 2 领域优先结构 | 内容页：53 | 领域 MOC：12 | 原始资料：43
-
 ## 快速入口
 
-- [[../index|全库首页]] — vault 总导航
-- [[hot|热缓存]] — 当前维护重点
-- [[overview|覆盖总览]] — 当前知识覆盖面
-- [[meta/maintenance/MAINTENANCE|维护手册]] — 每日/每周/每月工作流
-- [[log|Wiki 日志]] — wiki 层维护记录
-- [[meta/lint-reports/lint-report-2026-07-02|最新 Lint 报告]] — 结构质量检查
+- [[hot]] — 当前优先事项
+- [[overview]] — 覆盖面与缺口
+- [[log]] — 维护记录
 
-## MOC 导航
+## 五个功能区
 
-- [[01-china-tax/index]] — 中国税法
-- [[02-international-tax/index]] — 国际税基础框架、BEPS、常设机构、受益所有人
-- [[03-transfer-pricing/index]] — OECD TPG、独立交易原则、可比性、DEMPE、金融交易
-- [[04-us-tax/index]] — 美国税法和销售税
-- [[05-uk-tax/index]] — 英国税法和 VAT
-- [[06-eu-vat-gst/index]] — EU VAT/GST 和主要国家间接税
-- [[07-tax-treaties-and-cases/index]] — 税收协定与案例
-- [[08-industries/index]] — 行业税务
-- [[09-tax-tech/index]] — 税务科技
-- [[10-research-writing/index]] — 研究写作
-- [[sources/index]] — 来源摘要
+- [[knowledge/index|Knowledge]] — 国际税、转让定价、间接税、税务科技、研究写作、行业场景
+- [[jurisdictions/index|Jurisdictions]] — CN、US、UK、EU 和其他法域
+- [[cases/index|Cases]] — 协定、转让定价、间接税和国内案例
+- [[sources/index|Sources]] — 官方、国际组织、专业、学术、判例和机构来源摘要
+- [[_ops/index|_ops]] — 摄入、问题、复核、维护和 lint 报告
 
-## 传统 MOC
+## 横向 Dataview 面板
 
-- [[../indexes/mocs/国际税 MOC]] — 国际税基本框架、BEPS、常设机构、受益所有人
-- [[../indexes/mocs/税收协定与案例 MOC]] — 协定待遇、反滥用、案例入口
-- [[../indexes/mocs/转让定价 MOC]] — OECD TPG、独立交易原则、可比性、DEMPE、金融交易
-- [[../indexes/mocs/欧盟 VAT-GST MOC]] — VAT/GST/Sales Tax、EU VAT、主要国家体系
-- [[../indexes/mocs/中国税法 MOC]] — 中国增值税、研发费用加计扣除
-- [[../indexes/mocs/美国税法 MOC]] — Wayfair、美国销售税
-- [[../indexes/mocs/英国税法 MOC]] — 英国 VAT
-- [[../indexes/mocs/行业税务 MOC]] — 行业专题占位
-- [[../indexes/mocs/税务科技 MOC]] — 税务科技占位
-- [[../indexes/mocs/研究写作 MOC]] — 论文、memo、输出方法占位
-
-## 按 Type 查看
-
-- [[../indexes/dataview/全部概念索引]] — 所有 `type: concept` 页面
-- [[../indexes/dataview/全部案例索引]] — 所有 `type: case` 页面
-- [[../indexes/dataview/全部政策索引]] — 所有 `type: policy` 页面
-- [[../indexes/dataview/全部source索引]] — 所有 `type: source` 页面
-
-## 维护面板
-
-- [[../indexes/dataview/Needs Review 页面]] — 待复核页面
-- [[../indexes/dataview/Developing 页面]] — 正在发展中的页面
-- [[../indexes/dataview/Mature 知识资产]] — 成熟知识资产
-- [[../indexes/dataview/待补来源页面]] — 来源缺口队列
-- [[../indexes/dataview/适合转成输出的页面]] — 可转为输出的知识卡
-- [[../indexes/dataview/最近30天更新]] — 近期更新
-
-## 实体 (Entities)
-
-- [[entities/OECD]] — 国际税收规则制定核心机构，OECD TPG 和 BEPS 的关键来源
-- [[entities/EY]] — 全球 VAT/GST/Sales Tax 指南发布方之一
-
-## 概念 (Concepts)
-
-### 国际税与协定
-
-- [[02-international-tax/BEPS行动计划]] — OECD/G20 反税基侵蚀和利润转移的国际税改框架
-- [[02-international-tax/受益所有人]] — 协定优惠和反导管分析入口
-- [[02-international-tax/常设机构]] — 非居民来源国征税权判断入口
-- [[02-international-tax/国际税核心框架]] — 国际税分析总框架
-
-### 转让定价：基础理论
-
-- [[03-transfer-pricing/独立交易原则]] (Arm's Length Principle)
-- [[03-transfer-pricing/全球公式分配法]] (Global Formulary Apportionment)
-- [[03-transfer-pricing/可比性分析]] (Comparability Analysis)
-- [[03-transfer-pricing/转移定价方法]] (Transfer Pricing Methods)
-
-### 转让定价：价值创造与复杂交易
-
-- [[03-transfer-pricing/无形资产及DEMPE原则]] (Intangibles and DEMPE)
-- [[03-transfer-pricing/无形资产定价]] (Intangibles Pricing)
-- [[03-transfer-pricing/跨国集团协同效应]] (MNE Group Synergies)
-- [[03-transfer-pricing/集团内服务]] (Intra-Group Services)
-- [[03-transfer-pricing/成本分摊协议]] (Cost Contribution Arrangements)
-- [[03-transfer-pricing/业务重组]] (Business Restructurings)
-- [[03-transfer-pricing/金融交易]] (Financial Transactions)
-
-### 转让定价：合规与争议解决
-
-- [[03-transfer-pricing/转让定价同期资料]] (Transfer Pricing Documentation)
-- [[03-transfer-pricing/相互协商程序与对应调整]] (MAP and Corresponding Adjustments)
-- [[03-transfer-pricing/预约定价安排]] (Advance Pricing Arrangement)
-
-### 间接税基础
-
-- [[06-eu-vat-gst/增值税(VAT-GST)]] (VAT / GST)
-- [[06-eu-vat-gst/欧盟增值税体系]] (EU VAT System)
-- [[06-eu-vat-gst/欧盟增值税术语词典]] (EU VAT Glossary)
-
-### 主要国家/地区间接税
-
-#### 欧洲
-
-- [[06-eu-vat-gst/德国增值税体系]] (Germany VAT)
-- [[06-eu-vat-gst/法国增值税体系]] (France VAT)
-- [[05-uk-tax/英国增值税体系]] (United Kingdom VAT)
-
-#### 亚太
-
-- [[01-china-tax/中国增值税体系]] (China Mainland VAT)
-- [[06-eu-vat-gst/日本消费税体系]] (Japan Consumption Tax)
-- [[06-eu-vat-gst/印度GST体系]] (India GST)
-- [[06-eu-vat-gst/新加坡GST体系]] (Singapore GST)
-- [[06-eu-vat-gst/澳大利亚GST体系]] (Australia GST)
-
-#### 美洲
-
-- [[04-us-tax/美国销售税体系]] (US Sales & Use Tax)
-- [[06-eu-vat-gst/加拿大GST-HST体系]] (Canada GST/HST/QST/PST)
-
-## 政策与案例
-
-- [[01-china-tax/研发费用加计扣除]] — 中国企业所得税研发优惠示例页
-- [[07-tax-treaties-and-cases/South Dakota v Wayfair]] — 美国 sales tax economic nexus 核心案例
-
-## 素材摘要 (Sources)
-
-- [[sources/2026-04-28-OECD-TPG-2022]] — OECD Transfer Pricing Guidelines 2022，658 页，10 章
-- [[sources/2026-05-07-EY-VAT-Guide-2026]] — EY Worldwide VAT, GST and Sales Tax Guide 2026，2226 页，153 管辖区
-
-## 原文入口 (Raw)
-
-### PDF
-
-- [[../raw/assets/pdfs/wiki-tax/2022-OECD TRANSFER PRICING GUIDELINES 2022.pdf|OECD TPG 2022 PDF]]
-- [[../raw/assets/pdfs/wiki-tax/OECD跨国企业与税务机关转让定价指南2022.pdf|OECD TPG 2022 中文 PDF]]
-- [[../raw/assets/pdfs/wiki-tax/ey-gl-vat-guide-03-2026.pdf|EY VAT/GST/Sales Tax Guide 2026 PDF]]
-
-### OECD TPG 分段文本
-
-- [[../raw/assets/extracted/wiki-tax/2022-OECD-TPG-extracted|pp.1-60]]
-- [[../raw/assets/extracted/wiki-tax/2022-OECD-TPG-extracted-61-150|pp.61-150]]
-- [[../raw/assets/extracted/wiki-tax/2022-OECD-TPG-extracted-151-240|pp.151-240]]
-- [[../raw/assets/extracted/wiki-tax/2022-OECD-TPG-extracted-241-330|pp.241-330]]
-- [[../raw/assets/extracted/wiki-tax/2022-OECD-TPG-extracted-331-800|pp.331-800]]
-
-### EY VAT Guide 重点章节
-
-- [[../raw/assets/extracted/wiki-tax/ey-vat-guide-EU-chapter|EU chapter]]
-- [[../raw/assets/extracted/wiki-tax/ey-vat-guide-China-Mainland|China Mainland]]
-- [[../raw/assets/extracted/wiki-tax/ey-vat-guide-United-States|United States]]
-- [[../raw/assets/extracted/wiki-tax/ey-vat-guide-United-Kingdom|United Kingdom]]
-- [[../raw/assets/extracted/wiki-tax/ey-vat-guide-Germany|Germany]]
-- [[../raw/assets/extracted/wiki-tax/ey-vat-guide-France|France]]
-- [[../raw/assets/extracted/wiki-tax/ey-vat-guide-Japan|Japan]]
-- [[../raw/assets/extracted/wiki-tax/ey-vat-guide-India|India]]
-- [[../raw/assets/extracted/wiki-tax/ey-vat-guide-Singapore|Singapore]]
-- [[../raw/assets/extracted/wiki-tax/ey-vat-guide-Australia|Australia]]
-- [[../raw/assets/extracted/wiki-tax/ey-vat-guide-Canada|Canada]]
-
-## 综合分析 (Synthesis)
-
-- [[02-international-tax/国际税核心框架]] — 国际税分析的七步框架
-
-## 维护与迁移
-
-- [[meta/maintenance/MAINTENANCE]] — 维护手册
-- [[meta/maintenance/review-2026-06-28]] — 首次 review
-- [[meta/maintenance/wiki-tax-migration-2026-06-28]] — wiki-tax 内容迁移记录
-- [[meta/maintenance/obsidian-plugin-migration-2026-06-28]] — Obsidian 插件迁移记录
-- [[meta/maintenance/archive-root-optimization-2026-06-28]] — archive 根文档优化记录
-- [[meta/maintenance/index-rebuild-2026-06-28]] — 索引重构记录
-- [[meta/maintenance/automation-maintenance-2026-06-28]] — 自动任务维护策略
-
-## 待建设
-
-- `topics/`：跨素材主题页
-- `comparisons/`：制度对比页
-- `questions/`：保存的研究问题
-- `papers/`：论文笔记
-- `outputs/`：memo、面试回答、案例分析、研究短文
+- [[../indexes/dataview/全部概念索引]]
+- [[../indexes/dataview/全部案例索引]]
+- [[../indexes/dataview/全部政策索引]]
+- [[../indexes/dataview/全部source索引]]
+- [[../indexes/dataview/Needs Review 页面]]
+- [[../indexes/dataview/待补来源页面]]

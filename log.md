@@ -1,5 +1,11 @@
 # Vault Log
 
+## 2026-07-19 — P1
+
+- 完成 Phase 3 领域/法域/案例/来源/运维五区重构；移动 61 个 wiki 页面，所有迁移使用 `git mv`。
+- `indexes/mocs/` 的 10 个旧 MOC 改为 deprecated 兼容页；`domains/` 无 Markdown 内容，无需迁移。
+- 更新主入口、输出页和 manifest 的新路径；不再把技术型目录作为 `wiki/` 顶层导航。
+
 ## 2026-07-19
 
 - Phase 3 P0：完成公开仓库风险审计，新增 raw local-only 政策与风险审查报告。

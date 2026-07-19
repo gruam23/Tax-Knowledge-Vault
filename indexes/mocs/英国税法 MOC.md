@@ -1,13 +1,12 @@
-# 英国税法 MOC
+---
+title: "英国税法 MOC（已弃用）"
+type: meta
+summary: "兼容入口；正式英国法域 MOC 已迁移"
+status: deprecated
+created: 2026-06-28
+updated: 2026-07-19
+---
 
-## 核心主题
+# 已迁移
 
-- [[../../wiki/05-uk-tax/index]]
-- [[../../wiki/05-uk-tax/英国增值税体系]]
-
-## 待建设
-
-- Diverted Profits Tax
-- UK transfer pricing
-- UK VAT
-- HMRC guidance summaries
+请使用 [[../../wiki/jurisdictions/UK/index|英国法域 MOC]]。

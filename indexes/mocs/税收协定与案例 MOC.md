@@ -1,16 +1,12 @@
-# 税收协定与案例 MOC
+---
+title: "税收协定与案例 MOC（已弃用）"
+type: meta
+summary: "兼容入口；协定规则和案例已分流"
+status: deprecated
+created: 2026-06-28
+updated: 2026-07-19
+---
 
-## 示例主题
+# 已迁移
 
-- [[../../wiki/07-tax-treaties-and-cases/index]]
-- [[../../wiki/02-international-tax/受益所有人]]
-- [[../../wiki/02-international-tax/常设机构]]
-- [[../../wiki/02-international-tax/BEPS行动计划]]
-- [[../../wiki/07-tax-treaties-and-cases/South Dakota v Wayfair]]
-
-## 待建设
-
-- Treaty interpretation
-- Beneficial ownership cases
-- Permanent establishment cases
-- Principal purpose test
+请使用 [[../../wiki/knowledge/international-tax/treaties/index|协定规则]] 与 [[../../wiki/cases/index|案例索引]]。
