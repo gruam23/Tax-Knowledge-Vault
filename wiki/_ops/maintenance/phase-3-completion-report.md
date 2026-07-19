@@ -44,7 +44,7 @@ updated: 2026-07-19
 
 ## 未完成的 P6 验收项
 
-“至少 5 个 reviewed 核心卡”已达到；“至少 3 个 mature output”仍待真实使用验证。受益所有人、中国特别纳税调整、Pillar Two 等仍需按 Stage 1/2 摄入真实的官方或原始来源；不得用现有 EY 指南替代法律原文。
+“至少 5 个 reviewed 核心卡”已达到；“至少 3 个 mature output”仍待真实使用验证。[[../../../outputs/tax-memos/Phase-3-demo-validation-memo|Demo 验证备忘录]]记录了可复现测试与后续材料清单。受益所有人、中国特别纳税调整、Pillar Two 等仍需按 Stage 1/2 摄入真实的官方或原始来源；不得用现有 EY 指南替代法律原文。
 
 ## 合并与回滚建议
 
