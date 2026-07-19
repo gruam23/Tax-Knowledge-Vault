@@ -3,7 +3,7 @@ title: BEPS行动计划
 type: concept
 summary: OECD/G20 反税基侵蚀和利润转移的国际税改框架
 field: international-tax
-jurisdictions: ["global"]
+jurisdictions: [Global]
 status: developing
 level: intermediate
 confidence: medium

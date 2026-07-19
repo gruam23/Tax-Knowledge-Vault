@@ -3,7 +3,7 @@ title: "{{title}}"
 type: case
 summary:
 field:
-jurisdictions: []
+jurisdictions: [] # 例如 [CN]、[OECD]、[DE, EU]
 status: seed
 level: intermediate
 confidence: medium

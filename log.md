@@ -1,5 +1,13 @@
 # Vault Log
 
+## 2026-07-19 — Phase 3 收尾清理
+
+- 将 Phase 1 “独立交易原则”重复页缩减为 deprecated 跳转页，正式页面与标题保持不变。
+- 建立 `jurisdictions` 统一枚举并规范 37 个文件；lint 新增列表类型、允许值和 legacy 字段检查。
+- 清理 README、CODEX、overview 的 Phase 2/MOC 主导航旧描述，明确领域目录 `index.md` 为正式导航。
+- 保留研发费用加计扣除的官方来源缺口、空 `last_verified` 和 `needs-review` 状态，未伪造政策依据。
+- 本地四项验收通过：strict lint 的 errors 全部为 0，manifest check 为 0 errors / 0 warnings；仅保留 deprecated 跳转页和研发费用来源缺口两项非阻断 warning。
+
 ## 2026-07-19 — 本地优先治理
 
 - 停用 GitHub Actions，明确 GitHub 只用于版本备份、修改历史、远程审查和供 AI 读取。

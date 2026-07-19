@@ -1,36 +1,23 @@
 ---
-title: 独立交易原则
-type: concept
-summary: "关联交易定价应符合可比独立企业交易结果的转让定价基础原则"
-field: transfer-pricing
-jurisdictions: ["global"]
-status: developing
-level: intermediate
+title: 独立交易原则（Phase 1 旧占位）
+type: review
+summary: "Phase 1 遗留且已废止的迁移占位页，仅用于跳转到正式知识页"
+field: maintenance
+jurisdictions: []
+status: deprecated
+level: basic
 confidence: high
 source_quality: primary
-career_use: [interview, memo, study]
-sources: ["[[wiki/sources/2026-04-28-OECD-TPG-2022]]"]
-related: ["[[国际税核心框架]]", "[[../../../knowledge/transfer-pricing/独立交易原则]]", "[[转让定价 MOC]]"]
+career_use: [study]
+sources: []
+related: ["[[../../../knowledge/transfer-pricing/独立交易原则]]"]
 created: 2026-06-28
-updated: 2026-06-28
+updated: 2026-07-19
 ---
-# 独立交易原则
+# 独立交易原则（Phase 1 旧占位）
 
-## 速览
+本页为 Phase 1 遗留占位页，已经停止维护。
 
-独立交易原则要求关联交易定价与可比独立企业在可比条件下达成的价格或利润结果一致。
+请使用正式页面：
 
-## 核心要素
-
-- 准确识别交易。
-- 做可比性分析。
-- 选择合适的转让定价方法。
-- 用可比数据验证价格或利润水平。
-
-## 实务用途
-
-这是转让定价分析的总入口，应连接到可比性分析、转让定价方法、DEMPE、集团内服务和金融交易等专题。
-
-## 来源
-
-- Phase 1 seed note. Add OECD TPG 2022 source summary in Phase 2.
+[[../../../knowledge/transfer-pricing/独立交易原则]]

@@ -3,7 +3,7 @@ title: "{{title}}"
 type: review
 summary:
 field:
-jurisdictions: []
+jurisdictions: [] # 例如 [CN]、[OECD]、[DE, EU]
 status: needs-review
 level: basic
 confidence: low

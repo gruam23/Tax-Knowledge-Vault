@@ -3,7 +3,7 @@ title: "{{title}}"
 type: policy
 summary:
 field:
-jurisdictions: []
+jurisdictions: [] # 例如 [CN]、[OECD]、[DE, EU]
 status: seed
 level: basic
 confidence: medium

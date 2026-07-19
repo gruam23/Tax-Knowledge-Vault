@@ -66,11 +66,15 @@ updated:
 
 `career_use`: interview, memo, research, presentation, portfolio, study
 
+`jurisdictions`: Global, OECD, CN, US, UK, EU, AU, CA, DE, FR, IN, JP, SG
+
+`jurisdictions` 必须是列表，可以同时包含多个法域，例如 `[DE, EU]`、`[CN, OECD]`。`treaty`、`VAT`、`transfer-pricing` 等是效力或主题分类，不是法域：应分别放入 `authority_type`、`field` 或 `tags`。
+
 ## 可选字段与迁移规则
 
 ### 税法效力与时间字段
 
-新页面必须使用 `jurisdictions`（例如 `[CN, OECD]`）。单数 `jurisdiction` 仅用于识别尚未迁移的旧页面，lint 只给 warning；不得为了通过 lint 在新页面中补回该字段。
+新页面必须使用 `jurisdictions`（例如 `[CN, OECD]`），且每个值必须来自上述统一枚举。单数 `jurisdiction` 是 legacy 字段，lint 将其视为错误；新页面和迁移完成的旧页面均不得使用，也不得与 `jurisdictions` 同时保留。
 
 - `authority_type`: treaty, statute, regulation, notice, administrative-guidance, case, professional, academic, internal-analysis。
 - `binding_status`: binding, persuasive, nonbinding, unknown；它与 `source_quality`（资料可靠程度）不同。

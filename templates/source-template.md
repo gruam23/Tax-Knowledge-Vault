@@ -3,7 +3,7 @@ title: "{{title}}"
 type: source
 summary:
 field:
-jurisdictions: []
+jurisdictions: [] # 例如 [CN]、[OECD]、[DE, EU]
 authority_type:
 binding_status: unknown
 legal_status: unknown

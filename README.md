@@ -37,12 +37,12 @@ python scripts/manifest_check.py --root .
 
 - `inbox/`：临时收件箱，用来快速保存政策、案例、论文、网页和想法。
 - `raw/`：原始资料层，是正式知识的 source of truth。
-- `wiki/`：结构化知识层，Phase 2 起按领域优先组织。
-- `wiki/sources/`：来源摘要页，连接 raw 原文与研究型知识卡。
-- `domains/`：学习路线和领域地图。
-- `outputs/`：面试回答、税务 memo、研究报告、PPT、作品集材料。
+- `wiki/`：Phase 3 正式知识层，分为 `knowledge/`、`jurisdictions/`、`cases/`、`sources/` 和 `_ops/`。
+- `outputs/`：面试回答、税务 memo、研究报告、PPT 和作品集。
 - `templates/`：各类页面模板。
-- `indexes/`：Dataview 查询和 MOC 导航页。
+- `indexes/dataview/`：按 `type`、`status`、`field`、`jurisdictions` 和 `career_use` 提供横向动态查询。
+- `indexes/mocs/`：旧 MOC 兼容页，已停止作为主导航维护。
+- `domains/`：如仍保留，仅作为旧学习路线或兼容资料，不是知识库主导航。
 
 ## 领域入口
 
@@ -51,6 +51,8 @@ python scripts/manifest_check.py --root .
 - `wiki/cases/`：按案例类型浏览。
 - `wiki/sources/`：按来源类型浏览可公开 source summary。
 - `wiki/_ops/`：维护、复核、摄入与 lint 报告。
+
+正式主导航是上述领域目录中的 `index.md`；`indexes/mocs/` 仅为 deprecated 兼容层。
 
 ## 工作流
 
@@ -63,14 +65,14 @@ python scripts/manifest_check.py --root .
 ### 每周
 
 - 选择 3-5 张 `needs-review` 或 `developing` 卡升级为研究型知识卡。
-- 检查 `wiki/index.md`、领域 `index.md` 和 `indexes/mocs/` 是否覆盖新增页面。
+- 检查对应领域目录下的 `index.md` 是否覆盖新增页面。
 - 运行 lint，处理死链、缺字段和 reviewed/mature 无来源问题。
 
 ### 每月
 
 - 复核公开仓库风险，清理本地路径、客户信息、私密配置和未授权原文。
 - 把成熟页面沉淀成 `outputs/` 中的面试回答、memo 或研究短文。
-- 对高频领域更新 MOC，确认领域结构仍比技术分类更适合检索。
+- 对高频领域更新目录 `index.md`，保持正式主导航与知识页同步。
 
 ## 本地验收
 

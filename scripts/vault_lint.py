@@ -83,6 +83,21 @@ ALLOWED_CAREER_USE = {"interview", "memo", "research", "presentation", "portfoli
 ALLOWED_AUTHORITY_TYPE = {"treaty", "statute", "regulation", "notice", "administrative-guidance", "case", "professional", "academic", "internal-analysis"}
 ALLOWED_BINDING_STATUS = {"binding", "persuasive", "nonbinding", "unknown"}
 ALLOWED_LEGAL_STATUS = {"current", "amended", "repealed", "draft", "historical", "unknown"}
+ALLOWED_JURISDICTIONS = {
+    "Global",
+    "OECD",
+    "CN",
+    "US",
+    "UK",
+    "EU",
+    "AU",
+    "CA",
+    "DE",
+    "FR",
+    "IN",
+    "JP",
+    "SG",
+}
 SUMMARY_MAX_CHARS = 80
 DATE_RE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
 WIKILINK_RE = re.compile(r"\[\[([^\]]+)\]\]")
@@ -219,9 +234,9 @@ def validate_enum(name: str, value: Any, allowed: set[str]) -> list[str]:
     return bad
 
 
-def section(title: str, items: list[str]) -> str:
+def section(title: str, items: list[str], level: int = 2) -> str:
     body = "\n".join(f"- {item}" for item in items) if items else "- 无"
-    return f"## {title}\n\n{body}\n"
+    return f"{'#' * level} {title}\n\n{body}\n"
 
 
 def load_manifest_paths(root: Path) -> set[str]:
@@ -333,6 +348,7 @@ def main() -> int:
     semantic_warnings: list[str] = []
     source_structure_warnings: list[str] = []
     stale_law_warnings: list[str] = []
+    deprecated_pages: list[str] = []
     titles: dict[str, list[str]] = {}
 
     for path in frontmatter_files:
@@ -366,11 +382,22 @@ def main() -> int:
             for bad in validate_enum(field, fm.get(field), allowed):
                 enum_errors.append(f"{name} `{field}` 非法值：{bad}")
 
+        if "jurisdiction" in fm:
+            enum_errors.append(f"{name} 使用 legacy `jurisdiction`；请迁移至 `jurisdictions`")
+        jurisdictions = fm.get("jurisdictions")
+        if jurisdictions is not None:
+            if not isinstance(jurisdictions, list):
+                enum_errors.append(f"{name} `jurisdictions` 必须是列表")
+            else:
+                for value in jurisdictions:
+                    if str(value) not in ALLOWED_JURISDICTIONS:
+                        enum_errors.append(f"{name} `jurisdictions` 非法值：{value}")
+
         for field in ("created", "updated"):
             if has_value(fm.get(field)) and not validate_date(fm.get(field)):
                 date_errors.append(f"{name} `{field}` 日期格式应为 YYYY-MM-DD")
-        if has_value(fm.get("jurisdiction")) and not has_value(fm.get("jurisdictions")):
-            semantic_warnings.append(f"{name} 仍使用 legacy `jurisdiction`，编辑时迁移至 `jurisdictions`")
+        if str(fm.get("status", "")) == "deprecated":
+            deprecated_pages.append(f"{name} 为 deprecated 页面")
         if str(fm.get("type")) == "source":
             required_sections = ["资料定位", "基本信息", "权威等级", "资料结构", "核心贡献", "已生成页面", "待继续整理", "Raw 原文位置"]
             missing_sections = [s for s in required_sections if f"## {s}" not in text]
@@ -455,6 +482,7 @@ def main() -> int:
         f"未被 wiki 正文引用的 raw 文件：{len(unreferenced_raw)}",
         f"输出材料可追溯性问题：{len(output_traceability)}",
         f"语义迁移/重复警告：{len(semantic_warnings) + len(duplicate_titles)}",
+        f"deprecated 页面：{len(deprecated_pages)}",
         f"source 结构警告：{len(source_structure_warnings)}",
         f"税法时效警告：{len(stale_law_warnings)}",
     ]
@@ -472,25 +500,29 @@ def main() -> int:
             f"# Lint 报告 {args.date}",
             "",
             section("摘要", summary),
-            section("Frontmatter 解析错误", frontmatter_errors),
-            section("缺失必填字段", missing_fields[:200]),
-            section("枚举值错误", enum_errors[:200]),
-            section("日期格式错误", date_errors[:200]),
-            section("Summary 长度错误", summary_errors[:200]),
-            section("正文死链", dead_links[:200]),
-            section("Sources Wikilink 错误", source_link_errors[:200]),
-            section("Reviewed/Mature 缺少 sources", missing_sources[:200]),
-            section("缺失 related", missing_related[:200]),
-            section("Seed 页面", seed_pages[:200]),
-            section("缺失速览", missing_quick_view[:200]),
-            section("Raw 来源可追溯性问题", unreferenced_raw[:200]),
-            section("输出材料可追溯性问题", output_traceability[:200]),
-            section("语义迁移与重复主题警告", (semantic_warnings + duplicate_titles)[:200]),
-            section("Source 页面完整性警告", source_structure_warnings[:200]),
-            section("税法时效警告", stale_law_warnings[:200]),
+            "## Errors\n",
+            section("Frontmatter 解析错误", frontmatter_errors, 3),
+            section("缺失必填字段", missing_fields[:200], 3),
+            section("枚举值错误", enum_errors[:200], 3),
+            section("日期格式错误", date_errors[:200], 3),
+            section("Summary 长度错误", summary_errors[:200], 3),
+            section("正文死链", dead_links[:200], 3),
+            section("Sources Wikilink 错误", source_link_errors[:200], 3),
+            "## Warnings\n",
+            section("Reviewed/Mature 缺少 sources", missing_sources[:200], 3),
+            section("缺失 related", missing_related[:200], 3),
+            section("Seed 页面", seed_pages[:200], 3),
+            section("缺失速览", missing_quick_view[:200], 3),
+            section("Raw 来源可追溯性问题", unreferenced_raw[:200], 3),
+            section("输出材料可追溯性问题", output_traceability[:200], 3),
+            section("语义迁移与重复主题警告", (semantic_warnings + duplicate_titles)[:200], 3),
+            section("Deprecated 页面", deprecated_pages[:200], 3),
+            section("Source 页面完整性警告", source_structure_warnings[:200], 3),
+            section("税法时效警告", stale_law_warnings[:200], 3),
             "## 建议修复\n",
             "- reviewed/mature 页面必须至少保留一个可解析来源；来源不足时降为 needs-review 或 developing。",
-            "- 迁移页面后同步更新 `wiki/index.md`、领域 `index.md` 和 `indexes/mocs/`。",
+            "- 迁移或新增页面后，同步更新对应领域目录中的 `index.md`。",
+            "- `indexes/mocs/` 仅作为旧兼容页，不再作为主导航维护。",
             "- sources 中的 wikilink 应指向 source summary 或 raw 原文，避免只写不可追踪的文字来源。",
             "",
         ]

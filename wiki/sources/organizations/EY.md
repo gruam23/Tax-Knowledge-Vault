@@ -15,7 +15,7 @@ related:
 sources:
   - "[[2026-05-07-EY-VAT-Guide-2026]]"
 field: indirect-tax
-jurisdictions: ["global"]
+jurisdictions: [Global]
 level: basic
 confidence: high
 source_quality: professional

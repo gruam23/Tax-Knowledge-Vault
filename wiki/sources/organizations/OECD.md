@@ -16,7 +16,7 @@ related:
 sources:
   - "[[wiki/sources/2026-04-28-OECD-TPG-2022]]"
 field: international-tax
-jurisdictions: ["global"]
+jurisdictions: [Global]
 level: basic
 confidence: high
 source_quality: primary

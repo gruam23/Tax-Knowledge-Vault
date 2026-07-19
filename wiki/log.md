@@ -16,6 +16,14 @@ updated: 2026-07-19
 ---
 # Wiki 日志
 
+## 2026-07-19 — Phase 3 收尾清理
+
+- 清除“独立交易原则”重复标题：正式知识页不变，Phase 1 占位页改为 deprecated 最小跳转页。
+- 将 `global`、`treaty` 和国家英文全称规范为统一 `jurisdictions` 枚举；协定属性改用 `authority_type: treaty`。
+- 更新 schema、模板、lint、README、CODEX、overview 和 hot，正式主导航统一为领域目录 `index.md`。
+- 研发费用加计扣除页继续保持 `status: needs-review`、`confidence: low`、`source_quality: unknown`、`sources: []` 和空 `last_verified`，并新增 Stage 1 来源缺口警告。
+- 本地重建、strict lint 和 manifest check 全部通过；errors 为 0，重复标题 warning 为 0，保留 1 个 deprecated 页面提示和 1 个真实税法时效 warning。
+
 ## 2026-07-19 — 本地优先治理
 
 - GitHub Actions 已停用，Vault 的运行和验收全部回到本地 Obsidian 与四项本地脚本。

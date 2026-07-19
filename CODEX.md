@@ -12,11 +12,13 @@
 - 新增或重写正式 wiki 页面时必须使用三层渐进式详略结构：frontmatter `summary`、正文 `## 速览`、正文深度内容。
 - 重要知识点必须能回溯到 source summary 或 raw 原文位置，优先使用可点击 wikilink。
 - 新建正式知识卡必须按新路由放入 `wiki/knowledge/`、`wiki/jurisdictions/` 或 `wiki/cases/` 的对应子目录。
+- 来源摘要放入 `wiki/sources/`；摄入、复核、维护和 lint 材料放入 `wiki/_ops/`。
 - `type` 只作为 metadata，用于 Dataview 和 lint，不决定物理目录。
-- 不再向旧 `wiki/concepts/`、`wiki/policies/` 技术目录新建页面；案例应放入新的 `wiki/cases/` 对应分类。需要按类型查看时使用 `indexes/dataview/全部概念索引.md`、`全部案例索引.md`、`全部政策索引.md` 和 `全部source索引.md`。
+- 不再向旧 `wiki/concepts/`、`wiki/policies/`、`wiki/rules/`、`wiki/topics/`、`wiki/reviews/` 技术目录新建页面；`wiki/cases/` 是正式案例目录，不能列入禁止目录。需要按类型查看时使用 `indexes/dataview/全部概念索引.md`、`全部案例索引.md`、`全部政策索引.md` 和 `全部source索引.md`。
 - 本库以本地 Obsidian 为唯一运行环境；GitHub 只做版本备份、历史、远程审查和供 AI 读取，不负责运行、部署或验收。
 - raw 原文、PDF 和完整提取文本只存在本地；GitHub 仅保存 source summary、知识卡、模板、脚本和 manifest 元数据。
-- 新页面只使用 `jurisdictions`；`jurisdiction` 是 legacy 字段，不得为了通过 lint 补回。
+- 新页面只使用列表字段 `jurisdictions`；其值只能是 `Global`、`OECD`、`CN`、`US`、`UK`、`EU`、`AU`、`CA`、`DE`、`FR`、`IN`、`JP`、`SG`。`jurisdiction` 是 legacy 字段，不得补回或与复数字段并存。
+- `treaty` 不是法域；协定属性使用 `authority_type: treaty` 或 `tags: [tax-treaty]` 表达。
 
 ## 每次操作前读取顺序
 
@@ -24,7 +26,7 @@
 2. 读 `wiki/hot.md`，了解近期上下文和当前维护重点。
 3. 读 `purpose.md`，确认研究方向和范围。
 4. 需要定位页面时读 `index.md` 和 `wiki/index.md`。
-5. 涉及具体领域时读相关 MOC。
+5. 涉及具体领域时读对应目录的 `index.md`。
 
 ## 工作流
 
@@ -36,21 +38,21 @@
 
 #### Stage 2：确认后生成
 
-人工确认 Stage 1 后，才创建/更新 source summary 和正式卡；同步更新 related、领域 MOC、manifest、hot、log，并运行重建、lint 和 manifest check。哈希未变化的资料跳过摄入；新版本以 `superseded_by` 保留旧规则历史。
+人工确认 Stage 1 后，才创建/更新 source summary 和正式卡；同步更新 related、领域 `index.md`、manifest、hot、log，并运行重建、lint 和 manifest check。哈希未变化的资料跳过摄入；新版本以 `superseded_by` 保留旧规则历史。
 
 1. 将原始资料放入 `raw/sources/` 或 `raw/assets/`。
 2. 在 `wiki/sources/` 创建 source summary。
 3. 在对应领域目录创建或更新 concept、rule、policy、case、synthesis 等页面。
 4. 对每个新页面写入 `summary` 字段和正文 `## 速览`。
 5. 在“来源”或“参考素材”中标注文件名、页码、章节或可点击 raw 链接。
-6. 补充 related 链接并更新相关 MOC。
+6. 补充 related 链接并更新对应领域目录的 `index.md`。
 7. 更新 `wiki/hot.md`、`wiki/index.md` 或相关索引。
 8. 将操作记录到 `wiki/log.md`。
 
 ### Ingest 结束前检查单
 
-- [ ] 新增页面已加入相关 MOC 或 `wiki/index.md`。
-- [ ] 新增正式知识卡位于 `wiki/knowledge/`、`wiki/jurisdictions/` 或新的 `wiki/cases/`，不位于旧 `wiki/concepts/`、`wiki/policies/`。
+- [ ] 新增页面已加入对应领域目录的 `index.md` 或 `wiki/index.md`。
+- [ ] 新增正式知识卡位于 `wiki/knowledge/`、`wiki/jurisdictions/` 或 `wiki/cases/`，不位于旧 `wiki/concepts/`、`wiki/policies/`、`wiki/rules/`、`wiki/topics/`、`wiki/reviews/`。
 - [ ] 页面 frontmatter 包含 `summary`、`sources`、`related`。
 - [ ] 正文包含 `## 速览`。
 - [ ] 来源能追溯到 `wiki/sources/` 或 `raw/` 的具体文件/章节/页码。
@@ -61,14 +63,14 @@
 
 ### Query
 
-1. 先读取 `wiki/hot.md`、`wiki/index.md` 和相关 MOC。
+1. 先读取 `wiki/hot.md`、`wiki/index.md` 和相关领域目录的 `index.md`。
 2. 优先使用 reviewed 或 mature 状态的笔记。
 3. 对不确定内容明确说明。
 4. 如果回答可以沉淀为专业材料，应保存到 `outputs/`。
 
 ### Lint
 
-检查缺失 frontmatter、缺失 sources、死链、孤立页面、重复主题、过期 MOC 和输出材料可追溯性问题。
+检查缺失 frontmatter、缺失 sources、非法法域枚举、死链、重复主题、领域索引覆盖和输出材料可追溯性问题。
 
 本地运行：
 

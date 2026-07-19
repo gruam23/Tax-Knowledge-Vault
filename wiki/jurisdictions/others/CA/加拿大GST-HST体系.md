@@ -15,7 +15,7 @@ tags:
 sources: ["[[wiki/sources/2026-05-07-EY-VAT-Guide-2026]]"]
 related: ["[[2026-05-07-EY-VAT-Guide-2026]]", "[[增值税(VAT-GST)]]", "[[欧盟 VAT-GST MOC]]"]
 field: indirect-tax
-jurisdictions: ["Canada"]
+jurisdictions: [CA]
 level: intermediate
 confidence: high
 source_quality: professional
