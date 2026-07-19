@@ -11,5 +11,9 @@ jobs:
       - run: python scripts/vault_lint.py --root . --strict
       - run: python scripts/manifest_check.py --root .
       - run: |
+          python scripts/rebuild_index.py
+          python scripts/rebuild_overview.py
+          git diff --exit-code -- index.md wiki/index.md wiki/overview.md
+      - run: |
           ! git ls-files | grep -E '^(raw/assets/extracted/|raw/private/|raw/local/)|\.(pdf|epub|mobi)$'
           ! git grep -nEI '(api[_-]?key|secret|token|password|[A-Za-z]:\\Users\\)' -- ':!archive/**'

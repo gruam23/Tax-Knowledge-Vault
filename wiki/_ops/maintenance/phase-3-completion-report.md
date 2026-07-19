@@ -38,12 +38,13 @@ updated: 2026-07-19
 ## 来源与内容状态
 
 - source summary：5（OECD TPG、EY VAT Guide、OECD Model Tax Convention、EU VAT Directive、Wayfair）。
-- 已升级 reviewed：常设机构、Wayfair、EU VAT 体系。
-- 当前统计：77 个 wiki 页面；reviewed 38；needs-review 3；mature 0。
+- 已升级 reviewed 核心卡：常设机构、Wayfair、EU VAT 体系、独立交易原则、DEMPE。
+- 已升级 reviewed 输出：独立交易原则、DEMPE、Wayfair 面试回答；都具有 source summary 证据链。
+- 当前统计以 `scripts/rebuild_index.py` 和 lint 报告为准；`mature` 保持 0。
 
 ## 未完成的 P6 验收项
 
-尚未达到“至少 5 个 reviewed 核心卡”和“至少 3 个 mature output”。受益所有人、独立交易原则、DEMPE、中国特别纳税调整、Pillar Two 等仍需按 Stage 1/2 摄入真实的官方或原始来源；不得用现有 EY 指南替代法律原文。
+“至少 5 个 reviewed 核心卡”已达到；“至少 3 个 mature output”仍待真实使用验证。受益所有人、中国特别纳税调整、Pillar Two 等仍需按 Stage 1/2 摄入真实的官方或原始来源；不得用现有 EY 指南替代法律原文。
 
 ## 合并与回滚建议
 
