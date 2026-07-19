@@ -13,7 +13,7 @@ status: reviewed
 - 参与 frontmatter 检查的 Markdown 文件数：78
 - 参与链接检查的 Markdown 文件数：140
 - frontmatter 解析错误：0
-- 缺失必填字段：1
+- 缺失必填字段：0
 - 枚举值错误：0
 - 日期格式错误：0
 - summary 长度错误：0
@@ -35,7 +35,7 @@ status: reviewed
 
 ## 缺失必填字段
 
-- outputs/tax-memos/Phase-3-demo-validation-memo.md 缺少 `jurisdiction`
+- 无
 
 ## 枚举值错误
 
