@@ -80,7 +80,7 @@ ALLOWED_FIELDS = {
 ALLOWED_CONFIDENCE = {"low", "medium", "high"}
 ALLOWED_SOURCE_QUALITY = {"primary", "official", "professional", "academic", "mixed", "unknown"}
 ALLOWED_CAREER_USE = {"interview", "memo", "research", "presentation", "portfolio", "study"}
-SUMMARY_MAX_CHARS = 120
+SUMMARY_MAX_CHARS = 80
 DATE_RE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
 WIKILINK_RE = re.compile(r"\[\[([^\]]+)\]\]")
 
@@ -274,11 +274,12 @@ def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--root", default=".")
     parser.add_argument("--date", default=dt.date.today().isoformat())
+    parser.add_argument("--strict", action="store_true", help="Return non-zero when errors are found.")
     args = parser.parse_args()
 
     root = Path(args.root).resolve()
     wiki_dir = root / "wiki"
-    report_dir = wiki_dir / "meta" / "lint-reports"
+    report_dir = wiki_dir / "_ops" / "lint-reports"
     report_dir.mkdir(parents=True, exist_ok=True)
 
     markdown_files = [
@@ -442,6 +443,10 @@ def main() -> int:
     out = report_dir / f"lint-report-{args.date}.md"
     out.write_text(report, encoding="utf-8")
     print(out)
+    errors = frontmatter_errors + missing_fields + enum_errors + date_errors + summary_errors + dead_links + source_link_errors
+    if args.strict and errors:
+        print(f"strict lint failed: {len(errors)} error(s)")
+        return 1
     return 0
 
 
