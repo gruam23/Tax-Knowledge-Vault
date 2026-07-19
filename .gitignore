@@ -20,3 +20,9 @@ private/
 confidential/
 client-data/
 raw/private/
+
+
+
+
+# Ignore Smart Environment folder
+.smart-env
