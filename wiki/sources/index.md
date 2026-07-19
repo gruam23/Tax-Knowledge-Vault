@@ -14,6 +14,9 @@ updated: 2026-07-19
 
 - [[2026-04-28-OECD-TPG-2022|OECD Transfer Pricing Guidelines 2022]]
 - [[2026-05-07-EY-VAT-Guide-2026|EY Worldwide VAT, GST and Sales Tax Guide 2026]]
+- [[2019-04-25-OECD-Model-Tax-Convention-2017|OECD Model Tax Convention 2017]]
+- [[2006-11-28-EU-VAT-Directive|EU VAT Directive]]
+- [[2018-06-21-South-Dakota-v-Wayfair|South Dakota v. Wayfair]]
 
 ## 发布机构
 

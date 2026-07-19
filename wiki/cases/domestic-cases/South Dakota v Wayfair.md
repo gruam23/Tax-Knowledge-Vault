@@ -4,15 +4,21 @@ type: case
 summary: "美国远程销售者经济联结规则的代表性销售税案例"
 field: us-tax
 jurisdiction: United States
-status: needs-review
+jurisdictions: [US]
+authority_type: case
+binding_status: binding
+legal_status: current
+last_verified: 2026-07-19
+citation_locator: "No. 17-494"
+status: reviewed
 level: intermediate
-confidence: low
-source_quality: unknown
+confidence: high
+source_quality: primary
 career_use: [interview, memo, study]
-sources: []
+sources: ["[[../../sources/2018-06-21-South-Dakota-v-Wayfair]]"]
 related: [美国税法 MOC]
 created: 2026-06-28
-updated: 2026-06-28
+updated: 2026-07-19
 ---
 # South Dakota v Wayfair
 
