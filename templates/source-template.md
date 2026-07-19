@@ -3,7 +3,12 @@ title: "{{title}}"
 type: source
 summary:
 field:
-jurisdiction:
+jurisdictions: []
+authority_type:
+binding_status: unknown
+legal_status: unknown
+last_verified:
+citation_locator:
 status: seed
 level: basic
 confidence: medium

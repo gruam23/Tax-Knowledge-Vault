@@ -3,7 +3,7 @@ title: "{{title}}"
 type: output
 summary:
 field:
-jurisdiction:
+jurisdictions: []
 status: seed
 level: basic
 confidence: medium
@@ -25,5 +25,19 @@ updated:
 ## 1 分钟版
 
 ## 3 分钟版
+
+## 专业展开框架
+
+## 可引用规则
+
+## 可引用案例
+
+## 英文表达
+
+## 防守或纠错话术
+
+## 回答风险
+
+## Sources
 
 ## 可能追问

@@ -3,7 +3,12 @@ title: "{{title}}"
 type: concept
 summary:
 field:
-jurisdiction:
+jurisdictions: []
+authority_type:
+binding_status: unknown
+legal_status: unknown
+last_verified:
+citation_locator:
 status: seed
 level: basic
 confidence: medium
@@ -29,6 +34,8 @@ updated:
 ## 定义
 
 ## 规则来源
+
+<!-- evidence: unverified; source: source-summary-page; locator: 待补 -->
 
 - [[source-summary-page]] — 章节/页码
   - → [[raw-file|原文位置]]

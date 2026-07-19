@@ -8,7 +8,8 @@ title:
 type:
 summary:
 field:
-jurisdiction:
+jurisdiction: # legacy; 新页面使用 jurisdictions
+jurisdictions: []
 status: seed
 level: basic
 confidence: medium
@@ -21,7 +22,7 @@ updated:
 ---
 ```
 
-`summary` 是一句话定位信息，建议不超过 40 个汉字。AI 扫描全库时优先读取它。
+`summary` 是一句话定位信息，最多 80 个 Unicode 字符。AI 扫描全库时优先读取它。
 
 ## 三层渐进式详略结构
 
@@ -29,7 +30,7 @@ updated:
 
 | 层级 | 位置 | 建议长度 | 用途 |
 | --- | --- | --- | --- |
-| Layer 1 | frontmatter `summary` | ≤40 个汉字 | 扫描和定位 |
+| Layer 1 | frontmatter `summary` | ≤80 个 Unicode 字符 | 扫描和定位 |
 | Layer 2 | 正文 `## 速览` | ≤150 个汉字 | 快速理解 |
 | Layer 3 | 正文其余部分 | 不限 | 深度研究、面试准备、memo 写作 |
 
@@ -67,6 +68,25 @@ updated:
 `career_use`: interview, memo, research, presentation, portfolio, study
 
 ## 可选字段与迁移规则
+
+### 税法效力与时间字段
+
+新页面可使用 `jurisdictions`（例如 `[CN, OECD]`）；单数 `jurisdiction` 为 legacy，编辑旧页时迁移，lint 仅警告。
+
+- `authority_type`: treaty, statute, regulation, notice, administrative-guidance, case, professional, academic, internal-analysis。
+- `binding_status`: binding, persuasive, nonbinding, unknown；它与 `source_quality`（资料可靠程度）不同。
+- `legal_status`: current, amended, repealed, draft, historical, unknown。
+- `effective_from`、`effective_to`、`last_verified`：日期；概念页不应为凑字段而填写。
+- `supersedes`、`superseded_by`：替代关系的 wikilink 列表。
+- `citation_locator`：精确条文、段落或页码，例如 `Article 5`、`Chapter VI, para. 6.32`。
+
+### 证据标记
+
+`confidence` 表示整页综合可信度；具体结论统一使用：
+
+`<!-- evidence: extracted; source: Source ID; locator: Article 5 -->`
+
+`evidence_status` 仅允许 `extracted`、`inferred`、`ambiguous`、`unverified`。
 
 `aliases`：用于记录中英文别名、缩写和常见译名，便于 Obsidian 搜索和 AI 检索。例如 PE、Permanent Establishment、常设机构。
 
