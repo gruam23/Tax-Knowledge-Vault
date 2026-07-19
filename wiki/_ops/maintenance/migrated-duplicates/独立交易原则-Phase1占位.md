@@ -10,7 +10,7 @@ confidence: high
 source_quality: primary
 career_use: [interview, memo, study]
 sources: ["[[wiki/sources/2026-04-28-OECD-TPG-2022]]"]
-related: ["[[国际税核心框架]]", "[[03-transfer-pricing/独立交易原则]]", "[[转让定价 MOC]]"]
+related: ["[[国际税核心框架]]", "[[../../../knowledge/transfer-pricing/独立交易原则]]", "[[转让定价 MOC]]"]
 created: 2026-06-28
 updated: 2026-06-28
 ---

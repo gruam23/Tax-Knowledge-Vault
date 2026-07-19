@@ -9,4 +9,4 @@ updated: 2026-07-19
 
 # 已迁移
 
-请使用 [[../../wiki/knowledge/indirect-tax/index|间接税]] 与 [[../../wiki/jurisdictions/EU/index|欧盟法域]]。
+请使用 [[../../wiki/knowledge/indirect-tax/index|间接税]] 与 [[../../wiki/jurisdictions/EU/欧盟增值税体系|欧盟法域]]。

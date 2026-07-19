@@ -8,7 +8,7 @@
 - [[schema]] — 元数据与证据规范
 - [[CODEX]] — 摄入与维护检查单
 - [[wiki/index]] — 知识层主入口
-- [[outputs]] — 面试、memo、报告和作品集输出
+- `outputs/` — 面试、memo、报告和作品集输出
 
 ## 维护
 

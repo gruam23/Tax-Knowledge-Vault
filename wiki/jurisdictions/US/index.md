@@ -13,7 +13,7 @@ updated: 2026-06-28
 ## 已迁移页面
 
 - [[美国销售税体系]]
-- [[../07-tax-treaties-and-cases/South Dakota v Wayfair]]
+- [[../../cases/domestic-cases/South Dakota v Wayfair]]
 
 ## 待建设
 

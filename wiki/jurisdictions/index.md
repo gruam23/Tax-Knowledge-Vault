@@ -13,5 +13,5 @@ updated: 2026-07-19
 - [[CN/index|中国]]
 - [[US/index|美国]]
 - [[UK/index|英国]]
-- [[EU/index|欧盟]]
+- [[EU/欧盟增值税体系|欧盟]]
 - [[others/index|其他法域]]

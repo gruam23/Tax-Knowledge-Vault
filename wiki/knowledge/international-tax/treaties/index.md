@@ -12,9 +12,9 @@ updated: 2026-06-28
 
 ## 协定概念
 
-- [[../02-international-tax/受益所有人]]
-- [[../02-international-tax/常设机构]]
-- [[../02-international-tax/BEPS行动计划]]
+- [[../受益所有人]]
+- [[../常设机构]]
+- [[../BEPS行动计划]]
 
 ## 案例
 
