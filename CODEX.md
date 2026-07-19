@@ -27,6 +27,14 @@
 
 ### Ingest
 
+#### Stage 1：结构化分析（不改正式卡）
+
+先在 `wiki/_ops/ingest/<source-id>-analysis.md` 使用 `templates/ingest-stage-1-template.md` 记录哈希、法域、效力、规则、例外、冲突和建议。Stage 1 不创建或升级正式知识卡。
+
+#### Stage 2：确认后生成
+
+人工确认 Stage 1 后，才创建/更新 source summary 和正式卡；同步更新 related、领域 MOC、manifest、hot、log，并运行重建、lint 和 manifest check。哈希未变化的资料跳过摄入；新版本以 `superseded_by` 保留旧规则历史。
+
 1. 将原始资料放入 `raw/sources/` 或 `raw/assets/`。
 2. 在 `wiki/sources/` 创建 source summary。
 3. 在对应领域目录创建或更新 concept、rule、policy、case、synthesis 等页面。
