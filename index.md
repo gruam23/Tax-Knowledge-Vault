@@ -16,3 +16,8 @@
 - [[wiki/_ops/maintenance/phase-3-audit]] — 当前治理审计
 - [[wiki/_ops/reviews/public-repository-risk-review]] — 公开仓库风险审查
 - [[raw/README]] — 本地原文与公开摘要边界
+
+
+<!-- AUTO-GENERATED:BEGIN -->
+Wiki 页面：74；reviewed：32；mature：0；needs-review：5。
+<!-- AUTO-GENERATED:END -->

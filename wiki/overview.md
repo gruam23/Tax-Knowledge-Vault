@@ -33,3 +33,8 @@ wiki 层负责把原始税务资料整理成结构化、可追溯的知识笔记
 - OECD Transfer Pricing Guidelines 来源摘要治理。
 - Economic nexus 和 marketplace facilitator 规则。
 - 中国企业所得税和增值税核心政策。
+
+
+<!-- AUTO-GENERATED:BEGIN -->
+当前知识页：74。请优先补齐 needs-review 页面对应的权威 source summary，并以最近 lint 报告为准。
+<!-- AUTO-GENERATED:END -->
