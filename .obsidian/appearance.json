@@ -1,12 +1,1 @@
-﻿{
-  "theme": "obsidian",
-  "accentColor": "#8957e5",
-  "cssThemeSnippets": [],
-  "enabledCssSnippets": [],
-  "baseFontSize": 16,
-  "baseFontSizeAction": false,
-  "translucency": false,
-  "monospaceFontFamily": "Cascadia Code, Consolas, 'Courier New', monospace",
-  "interfaceFontFamily": "",
-  "textFontFamily": ""
-}
+{}

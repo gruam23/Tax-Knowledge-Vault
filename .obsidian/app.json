@@ -1,12 +1,1 @@
-﻿{
-  "alwaysUpdateLinks": true,
-  "newFileLocation": "folder",
-  "newFileFolderPath": "inbox",
-  "showUnsupportedFiles": true,
-  "attachmentFolderPath": "attachments",
-  "readableLineLength": true,
-  "strictLineBreaks": false,
-  "showInlineTitle": true,
-  "showFrontmatter": true,
-  "highlightTextMatching": true
-}
+{}

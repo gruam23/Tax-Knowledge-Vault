@@ -1,5 +1,12 @@
 # Vault Log
 
+## 2026-07-19 — GitHub 完整安全快照
+
+- 为 67 个可公开空目录加入 `.gitkeep`，使知识库框架能够由 Git 完整还原。
+- 同步当前可公开的 Obsidian Vault 配置和全部已跟踪知识库文件到 `main`。
+- 继续排除 raw PDF、完整提取文本、private/local 资料、插件、AI 缓存和运行时文件；GitHub 仍不作为运行或验收环境。
+- 本地重建、strict lint 与 manifest check 通过后再推送。
+
 ## 2026-07-19 — Phase 3 最终小型修正
 
 - 增强 `rebuild_overview.py`：使用 PyYAML 统计正式页面、五类内容与四类成熟度状态，并仅更新 overview 自动生成区块。

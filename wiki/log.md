@@ -16,6 +16,13 @@ updated: 2026-07-19
 ---
 # Wiki 日志
 
+## 2026-07-19 — GitHub 完整安全快照
+
+- 为 attachments、domains、inbox、indexes、outputs、raw source 分类、templates 和 legacy wiki 框架中的 67 个空目录加入 `.gitkeep`。
+- GitHub 快照包含可公开知识卡、source summary、输出、脚本、模板、manifest 元数据和 Vault 配置。
+- local-only raw 原文、PDF、完整提取文本、私密资料、插件和 AI 运行缓存继续由 `.gitignore` 排除。
+- 本地四项验收通过，未将 GitHub Actions 恢复为验收条件。
+
 ## 2026-07-19 — Phase 3 最终小型修正
 
 - `rebuild_overview.py` 改为解析 frontmatter，并生成正式页面、Knowledge、Jurisdiction、Case、source summary、outputs 和状态统计。
