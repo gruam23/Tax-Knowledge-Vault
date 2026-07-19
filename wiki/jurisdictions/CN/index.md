@@ -3,7 +3,7 @@ title: 中国税法 MOC
 type: meta
 summary: 中国税法领域入口，覆盖增值税、企业所得税、优惠政策与征管
 field: china-tax
-jurisdiction: CN
+jurisdictions: ["CN"]
 status: reviewed
 created: 2026-06-28
 updated: 2026-06-28

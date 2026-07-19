@@ -14,7 +14,7 @@ tags:
 related: ["[[2026-05-07-EY-VAT-Guide-2026]]", "[[增值税(VAT-GST)]]", "[[欧盟 VAT-GST MOC]]"]
 sources: ["[[wiki/sources/2026-05-07-EY-VAT-Guide-2026]]"]
 field: indirect-tax
-jurisdiction: global
+jurisdictions: ["global"]
 level: intermediate
 confidence: high
 source_quality: professional

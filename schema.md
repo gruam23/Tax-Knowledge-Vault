@@ -8,7 +8,6 @@ title:
 type:
 summary:
 field:
-jurisdiction: # legacy; 新页面使用 jurisdictions
 jurisdictions: []
 status: seed
 level: basic
@@ -71,7 +70,7 @@ updated:
 
 ### 税法效力与时间字段
 
-新页面可使用 `jurisdictions`（例如 `[CN, OECD]`）；单数 `jurisdiction` 为 legacy，编辑旧页时迁移，lint 仅警告。
+新页面必须使用 `jurisdictions`（例如 `[CN, OECD]`）。单数 `jurisdiction` 仅用于识别尚未迁移的旧页面，lint 只给 warning；不得为了通过 lint 在新页面中补回该字段。
 
 - `authority_type`: treaty, statute, regulation, notice, administrative-guidance, case, professional, academic, internal-analysis。
 - `binding_status`: binding, persuasive, nonbinding, unknown；它与 `source_quality`（资料可靠程度）不同。

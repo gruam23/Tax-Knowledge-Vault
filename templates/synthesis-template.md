@@ -3,7 +3,7 @@ title: "{{title}}"
 type: synthesis
 summary:
 field:
-jurisdiction:
+jurisdictions: []
 status: seed
 level: intermediate
 confidence: medium

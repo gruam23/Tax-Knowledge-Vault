@@ -3,7 +3,7 @@ title: 税收协定与案例 MOC
 type: meta
 summary: 税收协定、反滥用、常设机构和重要税案入口
 field: tax-treaties-and-cases
-jurisdiction: global
+jurisdictions: ["global"]
 status: reviewed
 created: 2026-06-28
 updated: 2026-06-28

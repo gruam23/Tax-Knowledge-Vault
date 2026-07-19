@@ -3,7 +3,7 @@ title: archive 根文档优化记录 2026-06-28
 type: review
 summary: 将母库归档规范吸收为新库正式维护规则
 field: maintenance
-jurisdiction:
+jurisdictions: []
 status: reviewed
 level: basic
 confidence: high

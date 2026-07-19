@@ -3,7 +3,6 @@ title: South Dakota v Wayfair
 type: case
 summary: "美国远程销售者经济联结规则的代表性销售税案例"
 field: us-tax
-jurisdiction: United States
 jurisdictions: [US]
 authority_type: case
 binding_status: binding

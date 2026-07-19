@@ -18,7 +18,6 @@ tags:
 related: ["[[2026-04-28-OECD-TPG-2022]]", "[[转让定价 MOC]]"]
 sources: ["[[wiki/sources/2026-04-28-OECD-TPG-2022]]"]
 field: transfer-pricing
-jurisdiction: global
 jurisdictions: [OECD]
 authority_type: administrative-guidance
 binding_status: nonbinding

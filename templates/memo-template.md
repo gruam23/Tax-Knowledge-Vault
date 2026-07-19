@@ -3,7 +3,7 @@ title: "{{title}}"
 type: output
 summary:
 field:
-jurisdiction:
+jurisdictions: []
 status: seed
 level: intermediate
 confidence: medium

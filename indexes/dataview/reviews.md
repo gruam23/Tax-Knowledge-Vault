@@ -2,6 +2,6 @@
 
 ```dataview
 TABLE field, jurisdiction, confidence, updated
-FROM "wiki/reviews"
+FROM "wiki/_ops/reviews"
 SORT updated DESC
 ```

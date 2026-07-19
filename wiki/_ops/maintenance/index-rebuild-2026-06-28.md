@@ -3,7 +3,7 @@ title: 索引重构记录 2026-06-28
 type: review
 summary: 重构 wiki/index 和核心 MOC，补全迁移内容入口
 field: maintenance
-jurisdiction:
+jurisdictions: []
 status: reviewed
 level: basic
 confidence: high

@@ -3,7 +3,7 @@ title: wiki-tax 迁移记录 2026-06-28
 type: review
 summary: "记录母库 wiki-tax 到派生库 Tax-Knowledge-Vault 的路径映射和只读约束"
 field: maintenance
-jurisdiction:
+jurisdictions: []
 status: reviewed
 level: basic
 confidence: high

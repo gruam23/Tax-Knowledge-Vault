@@ -3,7 +3,7 @@ title: 行业税务 MOC
 type: meta
 summary: 行业税务专题入口
 field: industries
-jurisdiction: global
+jurisdictions: ["global"]
 status: developing
 created: 2026-06-28
 updated: 2026-06-28

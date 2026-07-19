@@ -3,7 +3,7 @@ title: 独立交易原则
 type: concept
 summary: "关联交易定价应符合可比独立企业交易结果的转让定价基础原则"
 field: transfer-pricing
-jurisdiction: global
+jurisdictions: ["global"]
 status: developing
 level: intermediate
 confidence: high

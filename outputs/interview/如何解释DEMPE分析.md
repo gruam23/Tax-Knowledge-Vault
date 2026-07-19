@@ -3,7 +3,6 @@ title: 如何解释DEMPE分析
 type: output
 summary: 面试中解释无形资产 DEMPE 分析的回答模板
 field: transfer-pricing
-jurisdiction: global
 jurisdictions: [OECD]
 status: reviewed
 level: advanced

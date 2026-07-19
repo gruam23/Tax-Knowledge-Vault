@@ -30,9 +30,9 @@ updated: 2026-07-19
 - `manifest_check.py`：0 errors、0 warnings。
 - manifest 记录 raw local-only、公开摘要可用性、许可状态、核验日期及下游页。
 
-## CI 与公开风险
+## 本地验收与公开风险
 
-- `.github/workflows/vault-check.yml` 在 push/PR 运行严格 lint、manifest check 与敏感/禁用 raw 路径扫描。
+- GitHub Actions 已停用；`rebuild_index.py`、`rebuild_overview.py`、严格 lint 和 manifest check 只在本地运行，结果是验收依据。
 - 完整 OECD/EY 提取文本已停止当前 Git 追踪；本地文件未删除；历史清理由人工决定。
 
 ## 来源与内容状态

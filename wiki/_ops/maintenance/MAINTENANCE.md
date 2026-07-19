@@ -1,9 +1,9 @@
 ---
 title: 维护手册
 type: review
-summary: "每周、每月、批量迁移和自动任务维护的操作清单"
+summary: "本地 Obsidian 的每周、每月、批量迁移和质量检查操作清单"
 field: maintenance
-jurisdiction:
+jurisdictions: []
 status: reviewed
 level: basic
 confidence: high
@@ -12,7 +12,7 @@ career_use: [study]
 sources: [CODEX.md, Tax-Knowledge-Vault-Plan.md]
 related: [wiki-tax migration 2026-06-28]
 created: 2026-06-28
-updated: 2026-06-28
+updated: 2026-07-19
 ---
 # 维护手册
 
@@ -28,8 +28,8 @@ updated: 2026-06-28
 
 ## 每月维护
 
-1. 运行 `python scripts/vault_lint.py --root .`。
-2. 阅读 `wiki/meta/lint-reports/` 中的最新报告。
+1. 在本地依次运行四项验收命令。
+2. 阅读 `wiki/_ops/lint-reports/` 中的最新报告。
 3. 修复高影响的死链和来源可追溯性缺口。
 4. 选择 3-5 个主题做深化 synthesis。
 5. 在 `outputs/` 下产出至少一篇 memo、面试回答、案例分析或研究短文。
@@ -37,7 +37,21 @@ updated: 2026-06-28
 
 ## 批量迁移后检查
 
-每次批量导入后，立即运行 lint 脚本，并把迁移记录写入 `wiki/meta/maintenance/`。
+每次批量导入后，立即运行本地四项验收命令，并把迁移记录写入 `wiki/_ops/maintenance/`。
+
+```powershell
+python scripts/rebuild_index.py
+python scripts/rebuild_overview.py
+python scripts/vault_lint.py --root . --strict
+python scripts/manifest_check.py --root .
+```
+
+## 本地优先与 GitHub 边界
+
+- Obsidian 本地 Vault 是唯一运行环境，本地脚本结果是唯一验收依据。
+- GitHub 只用于版本备份、修改历史、远程审查和供 AI 读取，不运行或部署本库。
+- `raw/assets/extracted/`、`raw/assets/pdfs/`、`raw/private/`、`raw/local/` 只存在本地，并由 lint 排除。
+- GitHub 仅保存 source summary、知识卡、输出、模板、脚本和 manifest 元数据。
 
 ## 当前自动任务
 
@@ -57,7 +71,7 @@ updated: 2026-06-28
 - 自动任务是否覆盖当前质量规则：`summary`、`## 速览`、sources、related、MOC、raw 原文指针。
 - 自动任务是否会读取 `CODEX.md`、`schema.md`、`wiki/hot.md`、`wiki/index.md` 和本维护手册。
 - 如果新增目录、脚本、MOC、核心 source 或输出流程，应同步更新自动任务 prompt。
-- 自动任务变更必须记录到 `wiki/meta/maintenance/` 和 `wiki/log.md`。
+- 自动任务变更必须记录到 `wiki/_ops/maintenance/` 和 `wiki/log.md`。
 
 当前维护原则：
 

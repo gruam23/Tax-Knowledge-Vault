@@ -3,7 +3,7 @@ title: 研究写作 MOC
 type: meta
 summary: 税务研究、论文、memo 和职业输出写作入口
 field: research-writing
-jurisdiction: global
+jurisdictions: ["global"]
 status: developing
 created: 2026-06-28
 updated: 2026-06-28

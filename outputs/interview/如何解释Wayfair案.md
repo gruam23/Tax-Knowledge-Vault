@@ -3,7 +3,6 @@ title: 如何解释Wayfair案
 type: output
 summary: 面试中解释 Wayfair 案和美国销售税经济联系规则
 field: us-tax
-jurisdiction: US
 jurisdictions: [US]
 status: reviewed
 level: intermediate

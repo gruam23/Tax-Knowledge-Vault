@@ -3,7 +3,7 @@ title: Wiki 日志
 type: review
 summary: "Tax Knowledge Vault 的 wiki 层 ingest、query、lint 和维护操作时间线"
 field: maintenance
-jurisdiction:
+jurisdictions: []
 status: reviewed
 level: basic
 confidence: high
@@ -15,6 +15,12 @@ created: 2026-06-28
 updated: 2026-07-19
 ---
 # Wiki 日志
+
+## 2026-07-19 — 本地优先治理
+
+- GitHub Actions 已停用，Vault 的运行和验收全部回到本地 Obsidian 与四项本地脚本。
+- 所有正式页面和模板完成 `jurisdiction` → `jurisdictions` 迁移；local-only raw 目录不参与 lint 内容扫描。
+- 修复 `_ops/reviews`、`_ops/maintenance`、`_ops/lint-reports` 和 `wiki/cases` 的现行路由说明。
 
 ## 2026-07-19 — P1
 

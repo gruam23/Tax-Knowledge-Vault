@@ -1,5 +1,12 @@
 # Vault Log
 
+## 2026-07-19 — 本地优先治理
+
+- 停用 GitHub Actions，明确 GitHub 只用于版本备份、修改历史、远程审查和供 AI 读取。
+- 批量迁移 legacy `jurisdiction` 到 `jurisdictions`，新页面和 lint 不再要求单数字段。
+- lint 排除本地 raw 原文目录的内容检查，同时允许解析本地 raw 链接。
+- 更新 README、CODEX、overview、维护手册和 Dataview 路径；本地四项验收全部通过。
+
 ## 2026-07-19 — P1
 
 - 完成 Phase 3 领域/法域/案例/来源/运维五区重构；移动 61 个 wiki 页面，所有迁移使用 `git mv`。

@@ -3,7 +3,7 @@ title: 热缓存
 type: review
 summary: "当前维护重点是 source 体系、领域 MOC、面试输出和维护面板"
 field: maintenance
-jurisdiction:
+jurisdictions: []
 status: reviewed
 level: basic
 confidence: high
@@ -18,7 +18,7 @@ updated: 2026-07-02
 
 ## 当前重点
 
-Phase 2 领域优先结构已收口。2026-07-02 进一步统一 meta 策略：主入口使用 `wiki/hot.md`、`wiki/overview.md`、`wiki/log.md`、`wiki/meta/maintenance/` 和 `wiki/meta/lint-reports/`；`wiki/00-meta/index.md` 改为兼容页。
+Phase 3 领域优先结构已收口。主入口使用 `wiki/hot.md`、`wiki/overview.md`、`wiki/log.md`、`wiki/_ops/maintenance/` 和 `wiki/_ops/lint-reports/`。本库以本地 Obsidian 和本地脚本为运行、验收环境；GitHub 仅用于备份与审查。
 
 本轮已加厚国际税、转让定价、VAT/GST 三个领域 MOC，升级 sources 中心和 source 模板，给核心主题补 source 队列，并把 `outputs/interview/` 页面升级为完整面试资产。
 

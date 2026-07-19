@@ -72,6 +72,6 @@ wiki/
 | P1 | `wiki/` 目录迁移、MOC、旧导航兼容页与全库 wikilink 更新。 |
 | P2 | schema、模板、页面 metadata 的渐进迁移。 |
 | P3 | semantic lint 与独立 manifest check。 |
-| P4 | 自动索引/总览和 GitHub Actions。 |
+| P4 | 本地自动索引、总览与校验脚本；GitHub 不运行或部署 Vault。 |
 | P5 | Stage 1/Stage 2 ingest 规范、模板与 CODEX。 |
 | P6 | 核心主题权威来源、reviewed 卡和成熟输出升级。 |

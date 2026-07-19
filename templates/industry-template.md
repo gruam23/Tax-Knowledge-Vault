@@ -3,7 +3,7 @@ title: "{{title}}"
 type: industry
 summary:
 field:
-jurisdiction:
+jurisdictions: []
 status: seed
 level: basic
 confidence: medium

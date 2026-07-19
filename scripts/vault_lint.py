@@ -40,7 +40,7 @@ FORMAL_TYPES = {
 
 FORMAL_REQUIRED_FIELDS = BASE_REQUIRED_FIELDS + [
     "field",
-    "jurisdiction",
+    "jurisdictions",
     "level",
     "confidence",
     "source_quality",
@@ -247,8 +247,26 @@ def load_manifest_paths(root: Path) -> set[str]:
 
 
 def is_ignored_path(path: Path, root: Path) -> bool:
+    relative = path.relative_to(root).as_posix()
+    if relative.startswith((
+        "raw/assets/extracted/",
+        "raw/assets/pdfs/",
+        "raw/private/",
+        "raw/local/",
+    )):
+        return True
     parts = set(path.relative_to(root).parts)
     return bool({".git", ".smart-env", ".obsidian", ".cache", ".llm-wiki"} & parts)
+
+
+def is_local_only_raw(path: Path, root: Path) -> bool:
+    relative = path.relative_to(root).as_posix()
+    return relative.startswith((
+        "raw/assets/extracted/",
+        "raw/assets/pdfs/",
+        "raw/private/",
+        "raw/local/",
+    ))
 
 
 def should_check_frontmatter(path: Path, root: Path) -> bool:
@@ -293,7 +311,7 @@ def main() -> int:
     linkable_files = [
         p
         for p in root.rglob("*")
-        if p.is_file() and not is_ignored_path(p, root)
+        if p.is_file() and (not is_ignored_path(p, root) or is_local_only_raw(p, root))
     ]
     frontmatter_files = [p for p in markdown_files if should_check_frontmatter(p, root)]
     link_markdown_files = [
@@ -400,7 +418,7 @@ def main() -> int:
     raw_files = [
         p
         for p in (root / "raw").rglob("*")
-        if p.is_file() and p.name != ".gitkeep"
+        if p.is_file() and p.name != ".gitkeep" and not is_ignored_path(p, root)
     ]
     all_wiki_text = "\n".join(read_text(p) for p in frontmatter_files if p.exists())
     manifest_paths = load_manifest_paths(root)

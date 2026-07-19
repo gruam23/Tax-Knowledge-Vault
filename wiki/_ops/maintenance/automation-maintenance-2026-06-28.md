@@ -3,13 +3,13 @@ title: 自动任务维护策略 2026-06-28
 type: review
 summary: 将自动任务本身纳入知识库维护范围
 field: maintenance
-jurisdiction:
+jurisdictions: []
 status: reviewed
 level: basic
 confidence: high
 source_quality: primary
 career_use: [study]
-sources: [wiki/meta/maintenance/MAINTENANCE.md]
+sources: [wiki/_ops/maintenance/MAINTENANCE.md]
 related: [维护手册, 索引重构记录 2026-06-28]
 created: 2026-06-28
 updated: 2026-06-28

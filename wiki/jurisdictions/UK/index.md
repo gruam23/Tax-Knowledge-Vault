@@ -3,7 +3,7 @@ title: 英国税法 MOC
 type: meta
 summary: 英国税法与 VAT 专题入口
 field: uk-tax
-jurisdiction: UK
+jurisdictions: ["UK"]
 status: reviewed
 created: 2026-06-28
 updated: 2026-06-28

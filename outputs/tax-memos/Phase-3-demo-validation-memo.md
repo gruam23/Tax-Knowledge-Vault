@@ -3,7 +3,6 @@ title: "Phase 3 Demo 验证备忘录"
 type: output
 summary: "记录治理演练的可复现检查结果、demo 边界与后续真实验证材料清单"
 field: maintenance
-jurisdiction: global
 jurisdictions: [Global]
 status: reviewed
 level: intermediate

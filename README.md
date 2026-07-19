@@ -8,11 +8,21 @@
 2. 先读 `purpose.md`、`schema.md` 和 `CODEX.md`，确认写作边界、frontmatter 规范和维护规则。
 3. 从 `index.md` 进入全库导航，或从 `wiki/index.md` 进入知识层。
 4. 新概念优先使用 `templates/concept-template.md`，新输出优先使用 `templates/interview-template.md` 或 `outputs/interview/` 示例。
-5. 每次批量移动、扩写、引入新来源后运行 lint：
+5. 每次批量移动、扩写、引入新来源后在本机依次运行：
 
-```bash
-python scripts/vault_lint.py --root .
+```powershell
+python scripts/rebuild_index.py
+python scripts/rebuild_overview.py
+python scripts/vault_lint.py --root . --strict
+python scripts/manifest_check.py --root .
 ```
+
+## 本地优先原则
+
+- 本库只在本地 Obsidian 环境中运行，所有重建和质量检查均由本地脚本完成。
+- GitHub 不运行、不部署本知识库，也不承担验收职责；它仅用于版本备份、修改历史、远程审查和供 AI 读取公开项目内容。
+- raw 原文、PDF、完整网页和完整提取文本只存在本地，不上传 GitHub。
+- GitHub 仅保存 source summary、知识卡、输出、模板、脚本和 `raw/manifest.json` 元数据。
 
 ## 推荐 Obsidian 插件
 
@@ -62,12 +72,15 @@ python scripts/vault_lint.py --root .
 - 把成熟页面沉淀成 `outputs/` 中的面试回答、memo 或研究短文。
 - 对高频领域更新 MOC，确认领域结构仍比技术分类更适合检索。
 
-## Lint
+## 本地验收
 
 运行：
 
-```bash
-python scripts/vault_lint.py --root .
+```powershell
+python scripts/rebuild_index.py
+python scripts/rebuild_overview.py
+python scripts/vault_lint.py --root . --strict
+python scripts/manifest_check.py --root .
 ```
 
 脚本会解析 YAML frontmatter，检查枚举值、日期、summary 长度、sources wikilink、reviewed/mature 来源要求和全库死链，并生成：
@@ -76,12 +89,13 @@ python scripts/vault_lint.py --root .
 wiki/_ops/lint-reports/lint-report-YYYY-MM-DD.md
 ```
 
-## 隐私与公开仓库注意事项
+## 本地资料与 GitHub 边界
 
 - 不提交 `.env`、本地配置、缓存、数据库、客户资料、private/confidential 目录。
 - 公开文档不得包含本机绝对路径，使用“本仓库根目录”“只读母库”或相对路径表达。
-- 未确认授权的 PDF、网页全文、客户底稿和个人信息不得进入公开输出。
+- PDF、网页全文、完整提取文本、客户底稿和个人信息只保存在本地，不进入 GitHub。
 - 来源不足的页面保持 `needs-review` 或 `developing`，不得伪造权威来源。
+- GitHub Actions 不作为项目验收条件；本地四项命令的结果才是权威结果。
 
 ## 当前状态
 

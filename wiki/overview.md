@@ -1,9 +1,9 @@
 ---
 title: Wiki 总览
 type: review
-summary: "wiki 层当前覆盖范围、维护重点和下一步建设方向"
+summary: "本地 Obsidian 知识层的覆盖范围、维护重点和 GitHub 备份边界"
 field: maintenance
-jurisdiction:
+jurisdictions: []
 status: reviewed
 level: basic
 confidence: high
@@ -12,11 +12,17 @@ career_use: [study]
 sources: [CODEX.md]
 related: [税务知识库 Review 2026-06-28]
 created: 2026-06-28
-updated: 2026-06-28
+updated: 2026-07-19
 ---
 # Wiki 总览
 
 wiki 层负责把原始税务资料整理成结构化、可追溯的知识笔记。
+
+## 运行与存储边界
+
+- 本库只在本地 Obsidian 中运行，索引、overview、lint 和 manifest 检查均在本地执行。
+- raw 原文、PDF 和完整提取文本仅存本地；GitHub 只保存 source summary、知识卡、输出、模板、脚本和 manifest 元数据。
+- GitHub 不负责运行、部署或验收本知识库。
 
 ## 当前覆盖
 

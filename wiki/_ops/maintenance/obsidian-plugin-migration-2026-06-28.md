@@ -3,7 +3,7 @@ title: Obsidian 插件迁移记录 2026-06-28
 type: review
 summary: "记录从 wiki-tax 迁移到 Tax-Knowledge-Vault 的 Obsidian 插件和未覆盖项"
 field: maintenance
-jurisdiction:
+jurisdictions: []
 status: reviewed
 level: basic
 confidence: high

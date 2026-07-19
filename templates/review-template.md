@@ -3,7 +3,7 @@ title: "{{title}}"
 type: review
 summary:
 field:
-jurisdiction:
+jurisdictions: []
 status: needs-review
 level: basic
 confidence: low

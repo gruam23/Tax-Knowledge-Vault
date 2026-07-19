@@ -8,12 +8,15 @@
 - 本库必须保持独立，不与母库共用 `.git`、`.obsidian/plugins` 或缓存。
 - 每次大操作都要记录到 `log.md`。
 - 每次 wiki 层 ingest、query 或 lint 都要记录到 `wiki/log.md`。
-- 正式 wiki 页面至少应引用一个 source 页面或 raw 原始资料。证据不足的内容放入 `wiki/reviews/`。
+- 正式 wiki 页面至少应引用一个 source 页面或本地 raw 原始资料。证据不足或来源冲突的内容放入 `wiki/_ops/reviews/`。
 - 新增或重写正式 wiki 页面时必须使用三层渐进式详略结构：frontmatter `summary`、正文 `## 速览`、正文深度内容。
 - 重要知识点必须能回溯到 source summary 或 raw 原文位置，优先使用可点击 wikilink。
 - 新建正式知识卡必须按新路由放入 `wiki/knowledge/`、`wiki/jurisdictions/` 或 `wiki/cases/` 的对应子目录。
 - `type` 只作为 metadata，用于 Dataview 和 lint，不决定物理目录。
-- 不再默认向 `wiki/concepts/`、`wiki/cases/`、`wiki/policies/` 新建页面；需要按类型查看时使用 `indexes/dataview/全部概念索引.md`、`全部案例索引.md`、`全部政策索引.md` 和 `全部source索引.md`。
+- 不再向旧 `wiki/concepts/`、`wiki/policies/` 技术目录新建页面；案例应放入新的 `wiki/cases/` 对应分类。需要按类型查看时使用 `indexes/dataview/全部概念索引.md`、`全部案例索引.md`、`全部政策索引.md` 和 `全部source索引.md`。
+- 本库以本地 Obsidian 为唯一运行环境；GitHub 只做版本备份、历史、远程审查和供 AI 读取，不负责运行、部署或验收。
+- raw 原文、PDF 和完整提取文本只存在本地；GitHub 仅保存 source summary、知识卡、模板、脚本和 manifest 元数据。
+- 新页面只使用 `jurisdictions`；`jurisdiction` 是 legacy 字段，不得为了通过 lint 补回。
 
 ## 每次操作前读取顺序
 
@@ -47,7 +50,7 @@
 ### Ingest 结束前检查单
 
 - [ ] 新增页面已加入相关 MOC 或 `wiki/index.md`。
-- [ ] 新增正式知识卡位于领域目录，不位于旧 `wiki/concepts/`、`wiki/cases/`、`wiki/policies/`。
+- [ ] 新增正式知识卡位于 `wiki/knowledge/`、`wiki/jurisdictions/` 或新的 `wiki/cases/`，不位于旧 `wiki/concepts/`、`wiki/policies/`。
 - [ ] 页面 frontmatter 包含 `summary`、`sources`、`related`。
 - [ ] 正文包含 `## 速览`。
 - [ ] 来源能追溯到 `wiki/sources/` 或 `raw/` 的具体文件/章节/页码。
@@ -67,10 +70,13 @@
 
 检查缺失 frontmatter、缺失 sources、死链、孤立页面、重复主题、过期 MOC 和输出材料可追溯性问题。
 
-运行：
+本地运行：
 
 ```powershell
-python scripts/vault_lint.py --root .
+python scripts/rebuild_index.py
+python scripts/rebuild_overview.py
+python scripts/vault_lint.py --root . --strict
+python scripts/manifest_check.py --root .
 ```
 
 报告写入 `wiki/_ops/lint-reports/`，重要修复记录到 `wiki/log.md`。

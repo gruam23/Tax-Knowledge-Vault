@@ -3,7 +3,7 @@ title: 美国税法 MOC
 type: meta
 summary: 美国税法与销售税专题入口
 field: us-tax
-jurisdiction: US
+jurisdictions: ["US"]
 status: reviewed
 created: 2026-06-28
 updated: 2026-06-28
